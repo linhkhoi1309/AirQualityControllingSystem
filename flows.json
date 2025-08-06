@@ -96,37 +96,6 @@
         ]
     },
     {
-        "id": "02d7ccc09e0aa902",
-        "type": "ui_gauge",
-        "z": "bb53a7b7fb7842e1",
-        "name": "",
-        "group": "bc2745e9261eecb8",
-        "order": 2,
-        "width": "6",
-        "height": "7",
-        "gtype": "gage",
-        "title": "Khí gas",
-        "label": "%",
-        "format": "{{value}}",
-        "min": "0",
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "diff": false,
-        "className": "",
-        "x": 280,
-        "y": 400,
-        "wires": [],
-        "inputLabels": [
-            "45"
-        ]
-    },
-    {
         "id": "69abccaf0412e95a",
         "type": "ui_gauge",
         "z": "bb53a7b7fb7842e1",
@@ -163,7 +132,7 @@
         "order": 1,
         "width": "6",
         "height": "10",
-        "gtype": "donut",
+        "gtype": "gage",
         "title": "Bụi mịn",
         "label": "µg/m³",
         "format": "{{value}}",
@@ -1249,6 +1218,55 @@
         ]
     },
     {
+        "id": "964624fb5312c835",
+        "type": "ui_gauge",
+        "z": "bb53a7b7fb7842e1",
+        "name": "",
+        "group": "bc2745e9261eecb8",
+        "order": 1,
+        "width": "6",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Gas",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 390,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "9f6b639499a0f125",
+        "type": "mqtt in",
+        "z": "bb53a7b7fb7842e1",
+        "name": "",
+        "topic": "/wokwi/Gas",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1183ee75764de5bf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1260,
+        "wires": [
+            [
+                "964624fb5312c835"
+            ]
+        ]
+    },
+    {
         "id": "7099fc6ff1b05d53",
         "type": "ui_spacer",
         "z": "bb53a7b7fb7842e1",
@@ -1430,17 +1448,6 @@
         "className": ""
     },
     {
-        "id": "bc2745e9261eecb8",
-        "type": "ui_group",
-        "name": "Chất lượng không khí",
-        "tab": "home_tab",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "2479d9c11390cb6d",
         "type": "ui_group",
         "name": "Môi trường hiện tại",
@@ -1448,6 +1455,17 @@
         "order": 1,
         "disp": true,
         "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bc2745e9261eecb8",
+        "type": "ui_group",
+        "name": "Chất lượng không khí",
+        "tab": "home_tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
         "collapse": false,
         "className": ""
     },
