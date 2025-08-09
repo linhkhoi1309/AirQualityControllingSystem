@@ -27,11 +27,11 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 130,
-        "y": 100,
+        "x": 770,
+        "y": 660,
         "wires": [
             [
-                "c7829e8ed9143214"
+                "50728b6a6d85433a"
             ]
         ]
     },
@@ -41,8 +41,8 @@
         "z": "bb53a7b7fb7842e1",
         "name": "Switch Tab",
         "events": "all",
-        "x": 310,
-        "y": 140,
+        "x": 1170,
+        "y": 740,
         "wires": [
             []
         ]
@@ -56,19 +56,21 @@
         "tooltip": "",
         "group": "login_group",
         "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "email",
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "Email",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
+        "topicType": "str",
         "x": 110,
-        "y": 20,
+        "y": 260,
         "wires": [
-            []
+            [
+                "ff1e7d89ecf0e485"
+            ]
         ]
     },
     {
@@ -82,17 +84,19 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "password",
         "delay": 300,
-        "topic": "topic",
+        "topic": "Password",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
+        "topicType": "str",
         "x": 120,
-        "y": 60,
+        "y": 320,
         "wires": [
-            []
+            [
+                "ff1e7d89ecf0e485"
+            ]
         ]
     },
     {
@@ -553,8 +557,8 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 130,
-        "y": 180,
+        "x": 770,
+        "y": 740,
         "wires": [
             [
                 "c7829e8ed9143214"
@@ -624,17 +628,19 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "password",
         "delay": 300,
-        "topic": "topic",
+        "topic": "pass1",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 500,
-        "y": 140,
+        "topicType": "str",
+        "x": 260,
+        "y": 120,
         "wires": [
-            []
+            [
+                "25d73f2a0b6b765e"
+            ]
         ]
     },
     {
@@ -648,17 +654,19 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "password",
         "delay": 300,
-        "topic": "topic",
+        "topic": "pass2",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 530,
-        "y": 180,
+        "topicType": "str",
+        "x": 230,
+        "y": 160,
         "wires": [
-            []
+            [
+                "25d73f2a0b6b765e"
+            ]
         ]
     },
     {
@@ -693,11 +701,11 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 510,
-        "y": 220,
+        "x": 370,
+        "y": 240,
         "wires": [
             [
-                "edee5fb944db0cd8"
+                "1e1446d14b51d306"
             ]
         ]
     },
@@ -707,8 +715,8 @@
         "z": "bb53a7b7fb7842e1",
         "name": "Switch Tab",
         "events": "all",
-        "x": 690,
-        "y": 220,
+        "x": 850,
+        "y": 260,
         "wires": [
             []
         ]
@@ -733,8 +741,8 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 130,
-        "y": 140,
+        "x": 770,
+        "y": 700,
         "wires": [
             [
                 "c7829e8ed9143214"
@@ -752,17 +760,19 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "email",
         "delay": 300,
-        "topic": "topic",
+        "topic": "Email",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 930,
+        "topicType": "str",
+        "x": 1290,
         "y": 20,
         "wires": [
-            []
+            [
+                "73d9272cac177cce"
+            ]
         ]
     },
     {
@@ -776,17 +786,19 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "Họ",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 930,
+        "topicType": "str",
+        "x": 1290,
         "y": 60,
         "wires": [
-            []
+            [
+                "73d9272cac177cce"
+            ]
         ]
     },
     {
@@ -800,17 +812,19 @@
         "order": 3,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "Tên",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 930,
+        "topicType": "str",
+        "x": 1290,
         "y": 100,
         "wires": [
-            []
+            [
+                "73d9272cac177cce"
+            ]
         ]
     },
     {
@@ -829,12 +843,12 @@
         "bgcolor": "#",
         "className": "",
         "icon": "register",
-        "payload": "{\"tab\":\"Xác nhận\"}",
+        "payload": "{\"tab\": \"Xác nhận\"}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 950,
-        "y": 260,
+        "x": 1350,
+        "y": 320,
         "wires": [
             [
                 "204afcb7957de407"
@@ -847,8 +861,8 @@
         "z": "bb53a7b7fb7842e1",
         "name": "Switch Tab",
         "events": "all",
-        "x": 1130,
-        "y": 260,
+        "x": 1790,
+        "y": 200,
         "wires": [
             []
         ]
@@ -905,7 +919,7 @@
         "order": 5,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "multiple": false,
         "options": [
             {
@@ -925,13 +939,16 @@
             }
         ],
         "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "Giới tính",
+        "topicType": "str",
         "className": "",
-        "x": 940,
+        "x": 1300,
         "y": 180,
         "wires": [
-            []
+            [
+                "73d9272cac177cce",
+                "5ab58004d503c0ae"
+            ]
         ]
     },
     {
@@ -945,41 +962,19 @@
         "order": 6,
         "width": 0,
         "height": 0,
-        "passthru": true,
+        "passthru": false,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "Địa chỉ",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 930,
+        "topicType": "str",
+        "x": 1290,
         "y": 220,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2221ced4d9413554",
-        "type": "ui_text_input",
-        "z": "bb53a7b7fb7842e1",
-        "name": "",
-        "label": "Ngày sinh",
-        "tooltip": "",
-        "group": "6f469d59f7c4209a",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": 300,
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 940,
-        "y": 140,
-        "wires": [
-            []
+            [
+                "73d9272cac177cce"
+            ]
         ]
     },
     {
@@ -1265,6 +1260,205 @@
                 "964624fb5312c835"
             ]
         ]
+    },
+    {
+        "id": "ff1e7d89ecf0e485",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "Lấy email, password",
+        "func": "if (msg.topic === \"Username\"){\n    flow.set(\"username\", msg.payload);\n}\nif (msg.topic === \"Password\"){\n    flow.set(\"password\", msg.payload);\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50728b6a6d85433a",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "Tìm user trên database",
+        "func": "let email = flow.get(\"email\");\nmsg.topic = \"SELECT password FROM users WHERE email = (?)\";\nmsg.payload = [email];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 620,
+        "wires": [
+            [
+                "57ec29376d9da7a6"
+            ]
+        ]
+    },
+    {
+        "id": "57ec29376d9da7a6",
+        "type": "mysql",
+        "z": "bb53a7b7fb7842e1",
+        "mydb": "dbef2de882ccf871",
+        "name": "",
+        "x": 1210,
+        "y": 620,
+        "wires": [
+            [
+                "cd66a8650add12bd"
+            ]
+        ]
+    },
+    {
+        "id": "cd66a8650add12bd",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "So sánh password",
+        "func": "let password = flow.get(\"password\");\nif  (password === msg.payload[0].password)\n    msg.payload = {\"tab\": \"Trang chủ\"};\nelse\n    msg.payload = 0;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1410,
+        "y": 620,
+        "wires": [
+            [
+                "c7829e8ed9143214"
+            ]
+        ]
+    },
+    {
+        "id": "73d9272cac177cce",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "Lấy thông tin",
+        "func": "if (msg.topic === \"Email\") {\n    flow.set(\"email\", msg.payload);\n}\nelse if (msg.topic === \"Họ\") {\n    flow.set(\"họ\", msg.payload);\n}\nelse if (msg.topic === \"Tên\") {\n    flow.set(\"tên\", msg.payload);\n}\nelse if (msg.topic === \"Ngày sinh\") {\n    flow.set(\"ngày_sinh\", msg.payload);\n}\nelse if (msg.topic === \"Giới tính\") {\n    flow.set(\"giới_tính\", msg.payload);\n}\nelse if (msg.topic === \"Địa chỉ\") {\n    flow.set(\"địa_chỉ\", msg.payload);\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1530,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "352076b28187b9d8",
+        "type": "ui_date_picker",
+        "z": "bb53a7b7fb7842e1",
+        "name": "",
+        "label": "Ngày sinh",
+        "group": "6f469d59f7c4209a",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "Ngày sinh",
+        "topicType": "str",
+        "className": "",
+        "x": 1300,
+        "y": 140,
+        "wires": [
+            [
+                "73d9272cac177cce"
+            ]
+        ]
+    },
+    {
+        "id": "25d73f2a0b6b765e",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "Lưu password mới",
+        "func": "if (msg.topic === \"pass1\") {\n    flow.set(\"pass1\", msg.payload);\n}\nif (msg.topic === \"pass2\") {\n    flow.set(\"pass2\", msg.payload);\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e1446d14b51d306",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "Tạo password",
+        "func": "let p1 = flow.get(\"pass1\");\nlet p2 = flow.get(\"pass2\");\n\nlet out1 = null;\nlet out2 = null;\n\nif (p1 !== undefined && p2 !== undefined) {\n    if (p1 === p2) {\n\n        let email = flow.get(\"email\");\n        let ho = flow.get(\"họ\");\n        let ten = flow.get(\"tên\");\n\n        let ngay_sinh_ts = flow.get(\"ngày_sinh\")\n        let ngay_sinh = null;\n        // Chuyển timestamp sang YYYY-MM-DD nếu tồn tại\n        if (ngay_sinh_ts) {\n            let d = new Date(ngay_sinh_ts);\n            let yyyy = d.getFullYear();\n            let mm = String(d.getMonth() + 1).padStart(2, '0');\n            let dd = String(d.getDate()).padStart(2, '0');\n            ngay_sinh = `${yyyy}-${mm}-${dd}`;\n        }\n        \n        let gioi_tinh = flow.get(\"giới_tính\");\n        let dia_chi = flow.get(\"địa_chỉ\");\n        let password = p1;\n\n        out1 = {\n            topic: \"INSERT INTO users (email, ho, ten, ngay_sinh, gioi_tinh, dia_chi, password) VALUES (?, ?, ?, ?, ?, ?, ?)\",\n            payload: [email, ho, ten, ngay_sinh, gioi_tinh, dia_chi, password]\n        };\n        out2 = { payload: { tab: \"Trang chủ\" } };\n    } else {\n        return [null, null];\n    }\n}\n\nreturn [out1, out2];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "9316aeaf81ce9b77"
+            ],
+            [
+                "edee5fb944db0cd8"
+            ]
+        ]
+    },
+    {
+        "id": "9316aeaf81ce9b77",
+        "type": "mysql",
+        "z": "bb53a7b7fb7842e1",
+        "mydb": "dbef2de882ccf871",
+        "name": "",
+        "x": 850,
+        "y": 160,
+        "wires": [
+            [
+                "051be6f77dd01ca5"
+            ]
+        ]
+    },
+    {
+        "id": "051be6f77dd01ca5",
+        "type": "debug",
+        "z": "bb53a7b7fb7842e1",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5ab58004d503c0ae",
+        "type": "debug",
+        "z": "bb53a7b7fb7842e1",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 220,
+        "wires": []
     },
     {
         "id": "7099fc6ff1b05d53",
@@ -1596,6 +1790,16 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "dbef2de882ccf871",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "projectIOT",
+        "tz": "",
+        "charset": "UTF8"
     },
     {
         "id": "login_tab",
