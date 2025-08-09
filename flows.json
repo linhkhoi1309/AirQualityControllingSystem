@@ -1461,6 +1461,67 @@
         "wires": []
     },
     {
+        "id": "5f3f374dd77ceb84",
+        "type": "inject",
+        "z": "bb53a7b7fb7842e1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 750,
+        "y": 940,
+        "wires": [
+            [
+                "15c126a360e9049c"
+            ]
+        ]
+    },
+    {
+        "id": "15c126a360e9049c",
+        "type": "function",
+        "z": "bb53a7b7fb7842e1",
+        "name": "Tạo database users",
+        "func": "msg.topic = `\nCREATE TABLE IF NOT EXISTS users (\n  id INT NOT NULL AUTO_INCREMENT,\n  email VARCHAR(255) NOT NULL,\n  ho VARCHAR(50) NOT NULL,\n  ten VARCHAR(50) NOT NULL,\n  ngay_sinh DATE DEFAULT NULL,\n  gioi_tinh VARCHAR(20) DEFAULT NULL,\n  dia_chi VARCHAR(255) DEFAULT NULL,\n  password VARCHAR(255) NOT NULL,\n  PRIMARY KEY (id),\n  UNIQUE KEY email (email)\n)\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 940,
+        "wires": [
+            [
+                "f859afc6f9af55df"
+            ]
+        ]
+    },
+    {
+        "id": "f859afc6f9af55df",
+        "type": "mysql",
+        "z": "bb53a7b7fb7842e1",
+        "mydb": "dbef2de882ccf871",
+        "name": "Tạo database users",
+        "x": 1240,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "7099fc6ff1b05d53",
         "type": "ui_spacer",
         "z": "bb53a7b7fb7842e1",
