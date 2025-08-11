@@ -8,547 +8,6 @@
         "env": []
     },
     {
-        "id": "5f12a9f4eb6c06e3",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "reset": false
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "33c15f59b4cf3c76",
-        "type": "ui_tab",
-        "name": "23127396 - Luong Linh Khoi",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "c89414eea0de15ed",
-        "type": "ui_group",
-        "name": "Main",
-        "tab": "33c15f59b4cf3c76",
-        "order": 1,
-        "disp": true,
-        "width": "17",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "9156f6390ee44837",
-        "type": "ui_group",
-        "name": "Statistics",
-        "tab": "33c15f59b4cf3c76",
-        "order": 2,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "login_tab",
-        "type": "ui_tab",
-        "name": "Đăng nhập",
-        "icon": "lock",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "home_tab",
-        "type": "ui_tab",
-        "name": "Trang chủ",
-        "icon": "home",
-        "order": 2,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "03624fd6e0192ed3",
-        "type": "ui_tab",
-        "name": "Quên mật khẩu",
-        "icon": "dashboard",
-        "order": 3,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "317c5a2e2a252213",
-        "type": "ui_tab",
-        "name": "Xác nhận",
-        "icon": "dashboard",
-        "order": 4,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "5fbc7711003e14a0",
-        "type": "ui_tab",
-        "name": "Mật khẩu mới",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "4a22a1a7d67fc9cc",
-        "type": "ui_tab",
-        "name": "Đăng ký",
-        "icon": "dashboard",
-        "order": 6,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "login_group",
-        "type": "ui_group",
-        "name": "Chào mừng !!!",
-        "tab": "login_tab",
-        "order": 1,
-        "disp": true,
-        "width": 10,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "bc2745e9261eecb8",
-        "type": "ui_group",
-        "name": "Chất lượng không khí",
-        "tab": "home_tab",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "2479d9c11390cb6d",
-        "type": "ui_group",
-        "name": "Môi trường hiện tại",
-        "tab": "home_tab",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "c902f90e6aca1a97",
-        "type": "ui_group",
-        "name": "Biểu đồ",
-        "tab": "home_tab",
-        "order": 3,
-        "disp": true,
-        "width": 14,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "8841171fe2e5f73f",
-        "type": "ui_group",
-        "name": "Tùy chỉnh ngưỡng",
-        "tab": "home_tab",
-        "order": 4,
-        "disp": true,
-        "width": 26,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "72aa82b9e770af92",
-        "type": "ui_group",
-        "name": "Thông tin",
-        "tab": "03624fd6e0192ed3",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "f0f84895977cfd6f",
-        "type": "ui_group",
-        "name": "Mã xác nhận",
-        "tab": "317c5a2e2a252213",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "c57aef7b9edd92a0",
-        "type": "ui_group",
-        "name": "Thông tin",
-        "tab": "5fbc7711003e14a0",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "6f469d59f7c4209a",
-        "type": "ui_group",
-        "name": "Thông tin",
-        "tab": "4a22a1a7d67fc9cc",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "e31421cc3e4b27f6",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "broker.mqtt-dashboard.com",
-        "port": 1883,
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "1183ee75764de5bf",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "broker.mqtt-dashboard.com",
-        "port": 1883,
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "dbef2de882ccf871",
-        "type": "MySQLdatabase",
-        "name": "",
-        "host": "127.0.0.1",
-        "port": "3306",
-        "db": "projectIOT",
-        "tz": "",
-        "charset": "UTF8"
-    },
-    {
-        "id": "acb9c8bad82e7b7e",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "39386f72c2326c6c",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "204e481fc15b1882",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "151ea42fdfaa1c25",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "077a6357fd7eb783",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "24495c28a9036059",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "207a4da3a05966dd",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "5c777c6af8c083b8",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ec45dc144ef5ea93",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "4542a8b61df3f9ce",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "fcbe7a3b14affd76",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "70d9709468851cb0",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "6f21aa4e7d2daca1",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "0d3dcb87e47735e4",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 6,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "1a9245fc03d0e0ab",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 8,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "72afb59cb01086c4",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 9,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "5d0b376ab3dc0c7b",
-        "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 11,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "506d3aa414c10b90",
-        "type": "MySQLdatabase",
-        "name": "",
-        "host": "127.0.0.1",
-        "port": "3306",
-        "db": "",
-        "tz": "",
-        "charset": "UTF8"
-    },
-    {
-        "id": "23b924b292f89500",
-        "type": "firebase config",
-        "firebaseurl": "air-quality-control-4fdcc-default-rtdb",
-        "loginType": "none"
-    },
-    {
         "id": "5e3b3bd7bf90a16b",
         "type": "ui_button",
         "z": "8cde24c85d9833c4",
@@ -664,8 +123,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 390,
-        "y": 1120,
+        "x": 370,
+        "y": 1180,
         "wires": []
     },
     {
@@ -692,8 +151,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 400,
-        "y": 1200,
+        "x": 380,
+        "y": 1300,
         "wires": []
     },
     {
@@ -720,8 +179,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 400,
-        "y": 1040,
+        "x": 380,
+        "y": 1060,
         "wires": []
     },
     {
@@ -762,8 +221,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 470,
-        "y": 500,
+        "x": 230,
+        "y": 380,
         "wires": [
             []
         ]
@@ -781,18 +240,19 @@
         "height": 0,
         "passthru": true,
         "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": 0,
-        "max": "100",
+        "topic": "Temperature",
+        "topicType": "str",
+        "min": "-40",
+        "max": "80",
         "step": 1,
         "className": "",
         "x": 140,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "6ae22d7d8b520284",
-                "3f0f5da3ceb6be8c"
+                "3f0f5da3ceb6be8c",
+                "cb25a2c5eb276265"
             ]
         ]
     },
@@ -809,18 +269,19 @@
         "height": 0,
         "passthru": true,
         "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "Gas",
+        "topicType": "str",
         "min": 0,
         "max": "100",
         "step": 1,
         "className": "",
         "x": 140,
-        "y": 740,
+        "y": 800,
         "wires": [
             [
                 "ced8074c1a848556",
-                "4a52baf9ee6325b1"
+                "4a52baf9ee6325b1",
+                "cb25a2c5eb276265"
             ]
         ]
     },
@@ -837,18 +298,19 @@
         "height": 0,
         "passthru": true,
         "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "PM",
+        "topicType": "str",
         "min": 0,
-        "max": "100",
+        "max": "500",
         "step": 1,
         "className": "",
         "x": 140,
-        "y": 820,
+        "y": 880,
         "wires": [
             [
                 "0dbd1cece0de9540",
-                "98da560d45053259"
+                "98da560d45053259",
+                "cb25a2c5eb276265"
             ]
         ]
     },
@@ -865,18 +327,19 @@
         "height": 0,
         "passthru": true,
         "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "Humidity",
+        "topicType": "str",
         "min": 0,
         "max": "100",
         "step": 1,
         "className": "",
         "x": 130,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "16a8b02f9b38f33b",
-                "ac92ab245e90197a"
+                "ac92ab245e90197a",
+                "cb25a2c5eb276265"
             ]
         ]
     },
@@ -890,15 +353,15 @@
         "height": 0,
         "name": "",
         "label": "Giá trị:",
-        "format": "{{msg.payload}}",
+        "format": "{{msg.payload}}°C",
         "layout": "row-left",
         "className": "",
         "style": false,
         "font": "Arial Black,Arial Black,Gadget,sans-serif",
         "fontSize": 16,
         "color": "#f4230b",
-        "x": 290,
-        "y": 700,
+        "x": 470,
+        "y": 640,
         "wires": []
     },
     {
@@ -911,15 +374,15 @@
         "height": 0,
         "name": "",
         "label": "Giá trị:",
-        "format": "{{msg.payload}}",
+        "format": "{{msg.payload}}%",
         "layout": "row-left",
         "className": "",
         "style": false,
         "font": "Arial Black,Arial Black,Gadget,sans-serif",
         "fontSize": 16,
         "color": "#f4230b",
-        "x": 270,
-        "y": 620,
+        "x": 470,
+        "y": 560,
         "wires": []
     },
     {
@@ -932,15 +395,15 @@
         "height": 0,
         "name": "",
         "label": "Giá trị:",
-        "format": "{{msg.payload}}",
+        "format": "{{msg.payload}}ppm",
         "layout": "row-left",
         "className": "",
         "style": false,
         "font": "Arial Black,Arial Black,Gadget,sans-serif",
         "fontSize": 16,
         "color": "#f4230b",
-        "x": 290,
-        "y": 780,
+        "x": 470,
+        "y": 800,
         "wires": []
     },
     {
@@ -953,14 +416,14 @@
         "height": 0,
         "name": "",
         "label": "Giá trị:",
-        "format": "{{msg.payload}}",
+        "format": "{{msg.payload}}µg/m³",
         "layout": "row-left",
         "className": "",
         "style": false,
         "font": "Arial Black,Arial Black,Gadget,sans-serif",
         "fontSize": 16,
         "color": "#f4230b",
-        "x": 310,
+        "x": 470,
         "y": 880,
         "wires": []
     },
@@ -990,8 +453,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 170,
-        "y": 920,
+        "x": 130,
+        "y": 940,
         "wires": [
             [
                 "24d9f0390280b034"
@@ -1024,8 +487,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 420,
-        "y": 980,
+        "x": 400,
+        "y": 1000,
         "wires": [
             [
                 "1ffc241192510803",
@@ -1627,8 +1090,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 500,
-        "y": 540,
+        "x": 260,
+        "y": 440,
         "wires": [
             []
         ]
@@ -1647,8 +1110,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 410,
-        "y": 920,
+        "x": 470,
+        "y": 940,
         "wires": []
     },
     {
@@ -1682,7 +1145,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 210,
+        "x": 170,
         "y": 1060,
         "wires": [
             [
@@ -1704,8 +1167,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 200,
-        "y": 1140,
+        "x": 160,
+        "y": 1180,
         "wires": [
             [
                 "1dc0224d8f176b00",
@@ -1726,8 +1189,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 180,
-        "y": 1220,
+        "x": 140,
+        "y": 1300,
         "wires": [
             [
                 "1f74c308d96319d2",
@@ -1759,8 +1222,8 @@
         "seg2": "80",
         "diff": false,
         "className": "",
-        "x": 390,
-        "y": 1280,
+        "x": 370,
+        "y": 1420,
         "wires": []
     },
     {
@@ -1776,8 +1239,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
-        "y": 1300,
+        "x": 150,
+        "y": 1420,
         "wires": [
             [
                 "3f0e48099d158be4",
@@ -2050,13 +1513,13 @@
         "type": "firebase modify",
         "z": "8cde24c85d9833c4",
         "name": "",
-        "firebaseconfig": "23b924b292f89500",
+        "firebaseconfig": "",
         "childpath": "msg.childpath",
         "method": "push",
         "value": "msg.payload",
         "priority": "msg.priority",
-        "x": 1320,
-        "y": 1160,
+        "x": 1360,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -2073,8 +1536,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 860,
-        "y": 1160,
+        "x": 900,
+        "y": 1200,
         "wires": [
             [
                 "820d5055e46b2c60"
@@ -2093,11 +1556,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 1320,
+        "x": 390,
+        "y": 1480,
         "wires": [
             [
-                "a894ae28847f6b80"
+                "a894ae28847f6b80",
+                "0024f40c2c107898"
             ]
         ]
     },
@@ -2113,11 +1577,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 1240,
+        "x": 390,
+        "y": 1360,
         "wires": [
             [
-                "a894ae28847f6b80"
+                "a894ae28847f6b80",
+                "0024f40c2c107898"
             ]
         ]
     },
@@ -2133,11 +1598,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 1160,
+        "x": 400,
+        "y": 1240,
         "wires": [
             [
-                "a894ae28847f6b80"
+                "a894ae28847f6b80",
+                "0024f40c2c107898"
             ]
         ]
     },
@@ -2153,11 +1619,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 1080,
+        "x": 410,
+        "y": 1120,
         "wires": [
             [
-                "a894ae28847f6b80"
+                "a894ae28847f6b80",
+                "0024f40c2c107898"
             ]
         ]
     },
@@ -2182,8 +1649,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 630,
-        "y": 1160,
+        "x": 690,
+        "y": 1200,
         "wires": [
             [
                 "17ca53845a5ab0d5"
@@ -2204,8 +1671,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 340,
-        "y": 580,
+        "x": 540,
+        "y": 520,
         "wires": []
     },
     {
@@ -2222,8 +1689,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 370,
-        "y": 660,
+        "x": 550,
+        "y": 600,
         "wires": []
     },
     {
@@ -2240,8 +1707,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 340,
-        "y": 740,
+        "x": 520,
+        "y": 760,
         "wires": []
     },
     {
@@ -2258,8 +1725,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 340,
-        "y": 820,
+        "x": 520,
+        "y": 840,
         "wires": []
     },
     {
@@ -2275,8 +1742,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 210,
-        "y": 980,
+        "x": 170,
+        "y": 1000,
         "wires": [
             [
                 "93ad0a8513ec352b"
@@ -2295,8 +1762,476 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 580,
         "y": 1040,
         "wires": []
+    },
+    {
+        "id": "cb25a2c5eb276265",
+        "type": "function",
+        "z": "8cde24c85d9833c4",
+        "name": "Lấy dữ liệu",
+        "func": "if (msg.topic === \"Temperature\") {\n    flow.set(\"pending_Temperature\", Number(msg.payload)); \n}\nif (msg.topic === \"Humidity\") {\n    flow.set(\"pending_Humidity\", Number(msg.payload)); \n}\nif (msg.topic === \"Gas\") {\n    flow.set(\"pending_Gas\", Number(msg.payload)); \n}\nif (msg.topic === \"PM\") {\n    flow.set(\"pending_PM\", Number(msg.payload)); \n}\n\nreturn null; ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0024f40c2c107898",
+        "type": "function",
+        "z": "8cde24c85d9833c4",
+        "name": "Kiểm tra ngưỡng",
+        "func": "// Email nhận cảnh báo\nlet email = flow.get(\"email\");\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1400,
+        "wires": [
+            [
+                "5a9f9cf7fcbd7bde",
+                "0f799157011b5f70"
+            ]
+        ]
+    },
+    {
+        "id": "5a9f9cf7fcbd7bde",
+        "type": "e-mail",
+        "z": "8cde24c85d9833c4",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 930,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "0f799157011b5f70",
+        "type": "debug",
+        "z": "8cde24c85d9833c4",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "acb9c8bad82e7b7e",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "39386f72c2326c6c",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "204e481fc15b1882",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "151ea42fdfaa1c25",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "077a6357fd7eb783",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "24495c28a9036059",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "207a4da3a05966dd",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5c777c6af8c083b8",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ec45dc144ef5ea93",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4542a8b61df3f9ce",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fcbe7a3b14affd76",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "70d9709468851cb0",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6f21aa4e7d2daca1",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0d3dcb87e47735e4",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "1a9245fc03d0e0ab",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "72afb59cb01086c4",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 9,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "5d0b376ab3dc0c7b",
+        "type": "ui_spacer",
+        "z": "8cde24c85d9833c4",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 11,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "login_group",
+        "type": "ui_group",
+        "name": "Chào mừng !!!",
+        "tab": "login_tab",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2479d9c11390cb6d",
+        "type": "ui_group",
+        "name": "Môi trường hiện tại",
+        "tab": "home_tab",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bc2745e9261eecb8",
+        "type": "ui_group",
+        "name": "Chất lượng không khí",
+        "tab": "home_tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c902f90e6aca1a97",
+        "type": "ui_group",
+        "name": "Biểu đồ",
+        "tab": "home_tab",
+        "order": 3,
+        "disp": true,
+        "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8841171fe2e5f73f",
+        "type": "ui_group",
+        "name": "Tùy chỉnh ngưỡng",
+        "tab": "home_tab",
+        "order": 4,
+        "disp": true,
+        "width": 26,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "72aa82b9e770af92",
+        "type": "ui_group",
+        "name": "Thông tin",
+        "tab": "03624fd6e0192ed3",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f0f84895977cfd6f",
+        "type": "ui_group",
+        "name": "Mã xác nhận",
+        "tab": "317c5a2e2a252213",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c57aef7b9edd92a0",
+        "type": "ui_group",
+        "name": "Thông tin",
+        "tab": "5fbc7711003e14a0",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f469d59f7c4209a",
+        "type": "ui_group",
+        "name": "Thông tin",
+        "tab": "4a22a1a7d67fc9cc",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e31421cc3e4b27f6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1183ee75764de5bf",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dbef2de882ccf871",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "projectIOT",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "login_tab",
+        "type": "ui_tab",
+        "name": "Đăng nhập",
+        "icon": "lock",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "home_tab",
+        "type": "ui_tab",
+        "name": "Trang chủ",
+        "icon": "home",
+        "order": 2,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "03624fd6e0192ed3",
+        "type": "ui_tab",
+        "name": "Quên mật khẩu",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "317c5a2e2a252213",
+        "type": "ui_tab",
+        "name": "Xác nhận",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "5fbc7711003e14a0",
+        "type": "ui_tab",
+        "name": "Mật khẩu mới",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "4a22a1a7d67fc9cc",
+        "type": "ui_tab",
+        "name": "Đăng ký",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
     }
 ]
