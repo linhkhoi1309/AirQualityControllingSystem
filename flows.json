@@ -1,6 +1,6 @@
 [
     {
-        "id": "8cde24c85d9833c4",
+        "id": "f92df69886aea466",
         "type": "tab",
         "label": "Flow 5",
         "disabled": false,
@@ -8,9 +8,9 @@
         "env": []
     },
     {
-        "id": "5e3b3bd7bf90a16b",
+        "id": "4daaf1f3fa8dd350",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "login_group",
         "order": 4,
@@ -31,14 +31,14 @@
         "y": 660,
         "wires": [
             [
-                "56ba79aba5c74137"
+                "42f77a9f6eb00f5f"
             ]
         ]
     },
     {
-        "id": "561876fc11b2c1d6",
+        "id": "e17e131b476383b1",
         "type": "ui_ui_control",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Switch Tab",
         "events": "all",
         "x": 1170,
@@ -48,9 +48,9 @@
         ]
     },
     {
-        "id": "e604430028a96ca0",
+        "id": "ee1b54559c2b4afc",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Email",
         "tooltip": "",
@@ -69,14 +69,14 @@
         "y": 260,
         "wires": [
             [
-                "cf4e870f53db436c"
+                "c709ec956f41ec29"
             ]
         ]
     },
     {
-        "id": "9ddef60479bc86fd",
+        "id": "c6d4f381e26383b9",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Mật khẩu",
         "tooltip": "",
@@ -95,14 +95,14 @@
         "y": 320,
         "wires": [
             [
-                "cf4e870f53db436c"
+                "c709ec956f41ec29"
             ]
         ]
     },
     {
-        "id": "1dc0224d8f176b00",
+        "id": "7869a30e626bada0",
         "type": "ui_gauge",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "2479d9c11390cb6d",
         "order": 1,
@@ -128,9 +128,9 @@
         "wires": []
     },
     {
-        "id": "1f74c308d96319d2",
+        "id": "ce41623df33503f4",
         "type": "ui_gauge",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "bc2745e9261eecb8",
         "order": 1,
@@ -156,9 +156,9 @@
         "wires": []
     },
     {
-        "id": "8bfa0c4590d94726",
+        "id": "b16d36b983bf7806",
         "type": "ui_gauge",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "2479d9c11390cb6d",
         "order": 2,
@@ -184,9 +184,9 @@
         "wires": []
     },
     {
-        "id": "b787aa131538e5e5",
+        "id": "149b7ed7dd407645",
         "type": "ui_chart",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "c902f90e6aca1a97",
         "order": 5,
@@ -228,9 +228,9 @@
         ]
     },
     {
-        "id": "3d31cde4e12d2912",
+        "id": "b133e4711974aaed",
         "type": "ui_slider",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Nhiệt độ",
         "tooltip": "",
@@ -250,16 +250,16 @@
         "y": 640,
         "wires": [
             [
-                "6ae22d7d8b520284",
-                "3f0f5da3ceb6be8c",
-                "cb25a2c5eb276265"
+                "0fdaa6b1ec72c4b6",
+                "585294977a2adbbf",
+                "b0d47fc033e36f9c"
             ]
         ]
     },
     {
-        "id": "7a222af8b21e0d2a",
+        "id": "7921c98f655872cc",
         "type": "ui_slider",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Khí gas",
         "tooltip": "",
@@ -279,16 +279,16 @@
         "y": 800,
         "wires": [
             [
-                "ced8074c1a848556",
-                "4a52baf9ee6325b1",
-                "cb25a2c5eb276265"
+                "4fa23b3e26dfa4d6",
+                "45220187f7778aeb",
+                "b0d47fc033e36f9c"
             ]
         ]
     },
     {
-        "id": "26b6ba8aabe23cad",
+        "id": "04a27676d61663cf",
         "type": "ui_slider",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Bụi mịn",
         "tooltip": "",
@@ -308,16 +308,16 @@
         "y": 880,
         "wires": [
             [
-                "0dbd1cece0de9540",
-                "98da560d45053259",
-                "cb25a2c5eb276265"
+                "4358719248a99f14",
+                "032ba90937a4cdcb",
+                "b0d47fc033e36f9c"
             ]
         ]
     },
     {
-        "id": "abee8edf8cadd499",
+        "id": "e4b853a17fc3999e",
         "type": "ui_slider",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Độ ẩm",
         "tooltip": "",
@@ -337,16 +337,16 @@
         "y": 560,
         "wires": [
             [
-                "16a8b02f9b38f33b",
-                "ac92ab245e90197a",
-                "cb25a2c5eb276265"
+                "6027d3a7a466fa86",
+                "bb661b03461c94be",
+                "b0d47fc033e36f9c"
             ]
         ]
     },
     {
-        "id": "6ae22d7d8b520284",
+        "id": "0fdaa6b1ec72c4b6",
         "type": "ui_text",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "group": "8841171fe2e5f73f",
         "order": 6,
         "width": 0,
@@ -365,9 +365,9 @@
         "wires": []
     },
     {
-        "id": "16a8b02f9b38f33b",
+        "id": "6027d3a7a466fa86",
         "type": "ui_text",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "group": "8841171fe2e5f73f",
         "order": 4,
         "width": 0,
@@ -386,9 +386,9 @@
         "wires": []
     },
     {
-        "id": "ced8074c1a848556",
+        "id": "4fa23b3e26dfa4d6",
         "type": "ui_text",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "group": "8841171fe2e5f73f",
         "order": 8,
         "width": 0,
@@ -407,9 +407,9 @@
         "wires": []
     },
     {
-        "id": "0dbd1cece0de9540",
+        "id": "4358719248a99f14",
         "type": "ui_text",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "group": "8841171fe2e5f73f",
         "order": 10,
         "width": 0,
@@ -428,9 +428,9 @@
         "wires": []
     },
     {
-        "id": "e2afa4ea9b2da517",
+        "id": "ebc157d47def20af",
         "type": "ui_switch",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Relay",
         "tooltip": "",
@@ -457,14 +457,14 @@
         "y": 940,
         "wires": [
             [
-                "24d9f0390280b034"
+                "228cb6f028b36b05"
             ]
         ]
     },
     {
-        "id": "93ad0a8513ec352b",
+        "id": "ab465d84821b68eb",
         "type": "ui_switch",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Buzzer",
         "tooltip": "",
@@ -491,15 +491,15 @@
         "y": 1000,
         "wires": [
             [
-                "1ffc241192510803",
-                "c473e9a2d399644a"
+                "a4392b308af53349",
+                "109678b162c7f071"
             ]
         ]
     },
     {
-        "id": "4119473727d7a039",
+        "id": "e63c72eba637614a",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Email",
         "tooltip": "",
@@ -521,9 +521,9 @@
         ]
     },
     {
-        "id": "7907932315f640e6",
+        "id": "3f4e9604dce2adee",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "login_group",
         "order": 10,
@@ -544,14 +544,14 @@
         "y": 740,
         "wires": [
             [
-                "561876fc11b2c1d6"
+                "e17e131b476383b1"
             ]
         ]
     },
     {
-        "id": "32b9d6b30040b84d",
+        "id": "5fce8af64c7cf9bb",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Mã xác nhận",
         "tooltip": "",
@@ -573,9 +573,9 @@
         ]
     },
     {
-        "id": "9a559c47311920fa",
+        "id": "c281ea361ad03a94",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "72aa82b9e770af92",
         "order": 4,
@@ -596,14 +596,14 @@
         "y": 380,
         "wires": [
             [
-                "b8be54c442525b06"
+                "e17e4750823128ef"
             ]
         ]
     },
     {
-        "id": "fade234f5fdf7b1c",
+        "id": "4c83bec88bde02ee",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Mật khẩu",
         "tooltip": "",
@@ -622,14 +622,14 @@
         "y": 120,
         "wires": [
             [
-                "eca31d5c7e461f6b"
+                "e2991c404dd7e255"
             ]
         ]
     },
     {
-        "id": "f9bd6bf5af6c676b",
+        "id": "7aa62c9185101d97",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Xác nhận mật khẩu",
         "tooltip": "",
@@ -648,14 +648,14 @@
         "y": 160,
         "wires": [
             [
-                "eca31d5c7e461f6b"
+                "e2991c404dd7e255"
             ]
         ]
     },
     {
-        "id": "b8be54c442525b06",
+        "id": "e17e4750823128ef",
         "type": "ui_ui_control",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Switch Tab",
         "events": "all",
         "x": 1130,
@@ -665,9 +665,9 @@
         ]
     },
     {
-        "id": "d86f8761806a2ee4",
+        "id": "f8bf913c311351f1",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "c57aef7b9edd92a0",
         "order": 4,
@@ -688,14 +688,14 @@
         "y": 240,
         "wires": [
             [
-                "30dea37ecc5fa44d"
+                "a3bb68d0769c6441"
             ]
         ]
     },
     {
-        "id": "d1c27df9f7910edb",
+        "id": "7be5c3a04e596ced",
         "type": "ui_ui_control",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Switch Tab",
         "events": "all",
         "x": 850,
@@ -705,9 +705,9 @@
         ]
     },
     {
-        "id": "6ee5e806277905eb",
+        "id": "eb09c86df94e4c9e",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "login_group",
         "order": 7,
@@ -728,14 +728,14 @@
         "y": 700,
         "wires": [
             [
-                "561876fc11b2c1d6"
+                "e17e131b476383b1"
             ]
         ]
     },
     {
-        "id": "9ceadab5e15a763a",
+        "id": "61cf18c7e58b2771",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Email",
         "tooltip": "",
@@ -754,14 +754,14 @@
         "y": 20,
         "wires": [
             [
-                "61f5b1d7b1dd71fe"
+                "2c6f61ca4783c311"
             ]
         ]
     },
     {
-        "id": "46e9fa44f1816c26",
+        "id": "7e844c803a3c8be2",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Họ",
         "tooltip": "",
@@ -780,14 +780,14 @@
         "y": 60,
         "wires": [
             [
-                "61f5b1d7b1dd71fe"
+                "2c6f61ca4783c311"
             ]
         ]
     },
     {
-        "id": "087c0bcce2a81c38",
+        "id": "891c3e0e72b7652b",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Tên",
         "tooltip": "",
@@ -806,14 +806,14 @@
         "y": 100,
         "wires": [
             [
-                "61f5b1d7b1dd71fe"
+                "2c6f61ca4783c311"
             ]
         ]
     },
     {
-        "id": "48f1054a5a5fdcda",
+        "id": "f7b82d79f110b4f9",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "6f469d59f7c4209a",
         "order": 7,
@@ -834,14 +834,14 @@
         "y": 320,
         "wires": [
             [
-                "5773425137f16423"
+                "bd35e8547b8103d6"
             ]
         ]
     },
     {
-        "id": "5773425137f16423",
+        "id": "bd35e8547b8103d6",
         "type": "ui_ui_control",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Switch Tab",
         "events": "all",
         "x": 1790,
@@ -851,9 +851,9 @@
         ]
     },
     {
-        "id": "edd7e61fa828830b",
+        "id": "f24198d92d699692",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Login Button",
         "group": "f0f84895977cfd6f",
         "order": 4,
@@ -874,14 +874,14 @@
         "y": 60,
         "wires": [
             [
-                "e70436203773630d"
+                "0818fae31e9f8548"
             ]
         ]
     },
     {
-        "id": "e70436203773630d",
+        "id": "0818fae31e9f8548",
         "type": "ui_ui_control",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Switch Tab",
         "events": "all",
         "x": 690,
@@ -891,9 +891,9 @@
         ]
     },
     {
-        "id": "aadf888ea6eebcd9",
+        "id": "2c503e9cd104305e",
         "type": "ui_dropdown",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Giới tính",
         "tooltip": "",
@@ -929,15 +929,15 @@
         "y": 180,
         "wires": [
             [
-                "61f5b1d7b1dd71fe",
-                "a36facc135e814a5"
+                "2c6f61ca4783c311",
+                "afb89cfb6aebd8f4"
             ]
         ]
     },
     {
-        "id": "f012131ae1d2f924",
+        "id": "82689cf49dc1e2d4",
         "type": "ui_text_input",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Địa chỉ",
         "tooltip": "",
@@ -956,14 +956,14 @@
         "y": 220,
         "wires": [
             [
-                "61f5b1d7b1dd71fe"
+                "2c6f61ca4783c311"
             ]
         ]
     },
     {
-        "id": "5259892214654507",
+        "id": "d27afb51eb881b4b",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "c902f90e6aca1a97",
         "order": 1,
@@ -987,9 +987,9 @@
         ]
     },
     {
-        "id": "31dacd4579daa454",
+        "id": "911c3e0416046144",
         "type": "ui_date_picker",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Từ",
         "group": "c902f90e6aca1a97",
@@ -1007,9 +1007,9 @@
         ]
     },
     {
-        "id": "3b0d6ca825f767b9",
+        "id": "a0703fea28d81499",
         "type": "ui_date_picker",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Đến ",
         "group": "c902f90e6aca1a97",
@@ -1027,9 +1027,9 @@
         ]
     },
     {
-        "id": "6db62266f977454f",
+        "id": "c423d4f90bd2c242",
         "type": "ui_button",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "c902f90e6aca1a97",
         "order": 4,
@@ -1053,9 +1053,9 @@
         ]
     },
     {
-        "id": "f7e22bebbc82639a",
+        "id": "70b1eb276956913f",
         "type": "ui_chart",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "c902f90e6aca1a97",
         "order": 6,
@@ -1097,9 +1097,9 @@
         ]
     },
     {
-        "id": "24d9f0390280b034",
+        "id": "228cb6f028b36b05",
         "type": "mqtt out",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/relay",
         "qos": "2",
@@ -1115,9 +1115,9 @@
         "wires": []
     },
     {
-        "id": "1ffc241192510803",
+        "id": "a4392b308af53349",
         "type": "mqtt out",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/buzzer",
         "qos": "2",
@@ -1133,9 +1133,9 @@
         "wires": []
     },
     {
-        "id": "e39340c406bd4ea4",
+        "id": "eba44ff07c0cc51d",
         "type": "mqtt in",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/Temperature",
         "qos": "2",
@@ -1149,15 +1149,15 @@
         "y": 1060,
         "wires": [
             [
-                "8bfa0c4590d94726",
-                "93f575aee3f79d4f"
+                "b16d36b983bf7806",
+                "24aa48fc164cb0e9"
             ]
         ]
     },
     {
-        "id": "8f2575724c01a4d2",
+        "id": "22600a4c26af7564",
         "type": "mqtt in",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/Humidity",
         "qos": "2",
@@ -1171,15 +1171,15 @@
         "y": 1180,
         "wires": [
             [
-                "1dc0224d8f176b00",
-                "e29ff5e0fd5fb391"
+                "7869a30e626bada0",
+                "708dc34b7f8a30b8"
             ]
         ]
     },
     {
-        "id": "9d995194dd72f867",
+        "id": "6b7e1aab7d7d2b1a",
         "type": "mqtt in",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/PM",
         "qos": "2",
@@ -1193,15 +1193,15 @@
         "y": 1300,
         "wires": [
             [
-                "1f74c308d96319d2",
-                "9acb9b8eb154473c"
+                "ce41623df33503f4",
+                "86f50f48b558e253"
             ]
         ]
     },
     {
-        "id": "3f0e48099d158be4",
+        "id": "b6d37cf4afb9acef",
         "type": "ui_gauge",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "group": "bc2745e9261eecb8",
         "order": 1,
@@ -1227,9 +1227,9 @@
         "wires": []
     },
     {
-        "id": "05a0cea9c753f567",
+        "id": "4e678b0f35f95b06",
         "type": "mqtt in",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/Gas",
         "qos": "2",
@@ -1243,17 +1243,17 @@
         "y": 1420,
         "wires": [
             [
-                "3f0e48099d158be4",
-                "f10cbefbdb20284e"
+                "b6d37cf4afb9acef",
+                "508f68fa7461bfd2"
             ]
         ]
     },
     {
-        "id": "cf4e870f53db436c",
+        "id": "c709ec956f41ec29",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Lấy email, password",
-        "func": "if (msg.topic === \"Username\"){\n    flow.set(\"username\", msg.payload);\n}\nif (msg.topic === \"Password\"){\n    flow.set(\"password\", msg.payload);\n}\nreturn null;",
+        "func": "if (msg.topic === \"Email\") {\n    flow.set(\"email_login\", msg.payload);\n}\nif (msg.topic === \"Password\") {\n    flow.set(\"password\", msg.payload);\n}\nreturn null;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1267,11 +1267,11 @@
         ]
     },
     {
-        "id": "56ba79aba5c74137",
+        "id": "42f77a9f6eb00f5f",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Tìm user trên database",
-        "func": "let email = flow.get(\"email\");\nmsg.topic = \"SELECT password FROM users WHERE email = (?)\";\nmsg.payload = [email];\nreturn msg;",
+        "func": "let email = flow.get(\"email_login\");\nmsg.topic = \"SELECT password FROM users WHERE email = (?)\";\nmsg.payload = [email];\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1282,28 +1282,28 @@
         "y": 620,
         "wires": [
             [
-                "5953df24132c97e2"
+                "2d20a9dad0024eb2"
             ]
         ]
     },
     {
-        "id": "5953df24132c97e2",
+        "id": "2d20a9dad0024eb2",
         "type": "mysql",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "mydb": "dbef2de882ccf871",
         "name": "",
         "x": 1210,
         "y": 620,
         "wires": [
             [
-                "8cd539b280a893a5"
+                "d47527139aebe9ee"
             ]
         ]
     },
     {
-        "id": "8cd539b280a893a5",
+        "id": "d47527139aebe9ee",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "So sánh password",
         "func": "let password = flow.get(\"password\");\nif  (password === msg.payload[0].password)\n    msg.payload = {\"tab\": \"Trang chủ\"};\nelse\n    msg.payload = 0;\nreturn msg;",
         "outputs": 1,
@@ -1316,14 +1316,14 @@
         "y": 620,
         "wires": [
             [
-                "561876fc11b2c1d6"
+                "e17e131b476383b1"
             ]
         ]
     },
     {
-        "id": "61f5b1d7b1dd71fe",
+        "id": "2c6f61ca4783c311",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Lấy thông tin",
         "func": "if (msg.topic === \"Email\") {\n    flow.set(\"email\", msg.payload);\n}\nelse if (msg.topic === \"Họ\") {\n    flow.set(\"họ\", msg.payload);\n}\nelse if (msg.topic === \"Tên\") {\n    flow.set(\"tên\", msg.payload);\n}\nelse if (msg.topic === \"Ngày sinh\") {\n    flow.set(\"ngày_sinh\", msg.payload);\n}\nelse if (msg.topic === \"Giới tính\") {\n    flow.set(\"giới_tính\", msg.payload);\n}\nelse if (msg.topic === \"Địa chỉ\") {\n    flow.set(\"địa_chỉ\", msg.payload);\n}\nreturn null;",
         "outputs": 1,
@@ -1339,9 +1339,9 @@
         ]
     },
     {
-        "id": "dcb6f1ea3cedf625",
+        "id": "859381b673198d81",
         "type": "ui_date_picker",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "label": "Ngày sinh",
         "group": "6f469d59f7c4209a",
@@ -1356,14 +1356,14 @@
         "y": 140,
         "wires": [
             [
-                "61f5b1d7b1dd71fe"
+                "2c6f61ca4783c311"
             ]
         ]
     },
     {
-        "id": "eca31d5c7e461f6b",
+        "id": "e2991c404dd7e255",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Lưu password mới",
         "func": "if (msg.topic === \"pass1\") {\n    flow.set(\"pass1\", msg.payload);\n}\nif (msg.topic === \"pass2\") {\n    flow.set(\"pass2\", msg.payload);\n}\n\nreturn null;",
         "outputs": 1,
@@ -1379,9 +1379,9 @@
         ]
     },
     {
-        "id": "30dea37ecc5fa44d",
+        "id": "a3bb68d0769c6441",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Tạo password",
         "func": "let p1 = flow.get(\"pass1\");\nlet p2 = flow.get(\"pass2\");\n\nlet out1 = null;\nlet out2 = null;\n\nif (p1 !== undefined && p2 !== undefined) {\n    if (p1 === p2) {\n\n        let email = flow.get(\"email\");\n        let ho = flow.get(\"họ\");\n        let ten = flow.get(\"tên\");\n\n        let ngay_sinh_ts = flow.get(\"ngày_sinh\")\n        let ngay_sinh = null;\n        // Chuyển timestamp sang YYYY-MM-DD nếu tồn tại\n        if (ngay_sinh_ts) {\n            let d = new Date(ngay_sinh_ts);\n            let yyyy = d.getFullYear();\n            let mm = String(d.getMonth() + 1).padStart(2, '0');\n            let dd = String(d.getDate()).padStart(2, '0');\n            ngay_sinh = `${yyyy}-${mm}-${dd}`;\n        }\n        \n        let gioi_tinh = flow.get(\"giới_tính\");\n        let dia_chi = flow.get(\"địa_chỉ\");\n        let password = p1;\n\n        out1 = {\n            topic: \"INSERT INTO users (email, ho, ten, ngay_sinh, gioi_tinh, dia_chi, password) VALUES (?, ?, ?, ?, ?, ?, ?)\",\n            payload: [email, ho, ten, ngay_sinh, gioi_tinh, dia_chi, password]\n        };\n        out2 = { payload: { tab: \"Trang chủ\" } };\n    } else {\n        return [null, null];\n    }\n}\n\nreturn [out1, out2];",
         "outputs": 2,
@@ -1394,31 +1394,31 @@
         "y": 240,
         "wires": [
             [
-                "658ea8c69e39e60f"
+                "5ac95d364b1a3a6e"
             ],
             [
-                "d1c27df9f7910edb"
+                "7be5c3a04e596ced"
             ]
         ]
     },
     {
-        "id": "658ea8c69e39e60f",
+        "id": "5ac95d364b1a3a6e",
         "type": "mysql",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "mydb": "dbef2de882ccf871",
         "name": "",
         "x": 850,
         "y": 160,
         "wires": [
             [
-                "97e2067f7b76b2e7"
+                "7514ebead0e4e239"
             ]
         ]
     },
     {
-        "id": "97e2067f7b76b2e7",
+        "id": "7514ebead0e4e239",
         "type": "debug",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "debug 7",
         "active": true,
         "tosidebar": true,
@@ -1432,9 +1432,9 @@
         "wires": []
     },
     {
-        "id": "a36facc135e814a5",
+        "id": "afb89cfb6aebd8f4",
         "type": "debug",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "debug 8",
         "active": true,
         "tosidebar": true,
@@ -1448,9 +1448,9 @@
         "wires": []
     },
     {
-        "id": "a0c999ddee94417f",
+        "id": "581534f9b1314679",
         "type": "inject",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "props": [
             {
@@ -1472,14 +1472,14 @@
         "y": 900,
         "wires": [
             [
-                "aa09271ea29fcfec"
+                "abaac3b7405490f2"
             ]
         ]
     },
     {
-        "id": "aa09271ea29fcfec",
+        "id": "abaac3b7405490f2",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Tạo database users",
         "func": "msg.topic = `\nCREATE TABLE IF NOT EXISTS users (\n  id INT NOT NULL AUTO_INCREMENT,\n  email VARCHAR(255) NOT NULL,\n  ho VARCHAR(50) NOT NULL,\n  ten VARCHAR(50) NOT NULL,\n  ngay_sinh DATE DEFAULT NULL,\n  gioi_tinh VARCHAR(20) DEFAULT NULL,\n  dia_chi VARCHAR(255) DEFAULT NULL,\n  password VARCHAR(255) NOT NULL,\n  PRIMARY KEY (id),\n  UNIQUE KEY email (email)\n)\n`;\nreturn msg;",
         "outputs": 1,
@@ -1492,14 +1492,14 @@
         "y": 900,
         "wires": [
             [
-                "c38951563fab8a65"
+                "cf2c435eb3eb95ef"
             ]
         ]
     },
     {
-        "id": "c38951563fab8a65",
+        "id": "cf2c435eb3eb95ef",
         "type": "mysql",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "mydb": "dbef2de882ccf871",
         "name": "Tạo database users",
         "x": 1240,
@@ -1509,25 +1509,9 @@
         ]
     },
     {
-        "id": "820d5055e46b2c60",
-        "type": "firebase modify",
-        "z": "8cde24c85d9833c4",
-        "name": "",
-        "firebaseconfig": "",
-        "childpath": "msg.childpath",
-        "method": "push",
-        "value": "msg.payload",
-        "priority": "msg.priority",
-        "x": 1360,
-        "y": 1200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "17ca53845a5ab0d5",
+        "id": "d303e59c435a2185",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "chuẩn bị gửi lên cloud",
         "func": "msg.childpath = \"Statistics\"\n\nif(!msg.payload.hasOwnProperty(\"temperature\")){\n    msg.payload.temperature = flow.get(\"temperature\");\n}\nif(!msg.payload.hasOwnProperty(\"humidity\")){\n    msg.payload.humidity = flow.get(\"humidity\");\n}\nif(!msg.payload.hasOwnProperty(\"pm\")){\n    msg.payload.pm = flow.get(\"pm\");\n}\nif(!msg.payload.hasOwnProperty(\"gas\")){\n    msg.payload.gas = flow.get(\"gas\");\n}\nmsg.payload.timestamp = new Date().toISOString();\nreturn msg;",
         "outputs": 1,
@@ -1540,14 +1524,14 @@
         "y": 1200,
         "wires": [
             [
-                "820d5055e46b2c60"
+                "b6066317a55513e9"
             ]
         ]
     },
     {
-        "id": "f10cbefbdb20284e",
+        "id": "508f68fa7461bfd2",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "tiền xử lý gas",
         "func": "flow.set(\"gas\", msg.payload); // phòng khi timeout\nmsg.topic = \"gas\";\nreturn msg;",
         "outputs": 1,
@@ -1560,16 +1544,16 @@
         "y": 1480,
         "wires": [
             [
-                "a894ae28847f6b80",
-                "0024f40c2c107898",
-                "3ca3dfef34cb57ab"
+                "04a54cfa60a34ca0",
+                "63398861ad7aeb53",
+                "2ff67f5f8993e152"
             ]
         ]
     },
     {
-        "id": "9acb9b8eb154473c",
+        "id": "86f50f48b558e253",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "tiền xử lý PM",
         "func": "flow.set(\"pm\", msg.payload); // phòng khi timeout\nmsg.topic = \"pm\";\nreturn msg;",
         "outputs": 1,
@@ -1582,16 +1566,16 @@
         "y": 1360,
         "wires": [
             [
-                "a894ae28847f6b80",
-                "0024f40c2c107898",
-                "3ca3dfef34cb57ab"
+                "04a54cfa60a34ca0",
+                "63398861ad7aeb53",
+                "2ff67f5f8993e152"
             ]
         ]
     },
     {
-        "id": "e29ff5e0fd5fb391",
+        "id": "708dc34b7f8a30b8",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "tiền xử lý độ ẩm",
         "func": "flow.set(\"humidity\", msg.payload); // phòng khi timeout\nmsg.topic = \"humidity\";\nreturn msg;",
         "outputs": 1,
@@ -1604,16 +1588,16 @@
         "y": 1240,
         "wires": [
             [
-                "a894ae28847f6b80",
-                "0024f40c2c107898",
-                "3ca3dfef34cb57ab"
+                "04a54cfa60a34ca0",
+                "63398861ad7aeb53",
+                "2ff67f5f8993e152"
             ]
         ]
     },
     {
-        "id": "93f575aee3f79d4f",
+        "id": "24aa48fc164cb0e9",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "tiền xử lý nhiệt độ",
         "func": "flow.set(\"temperature\", msg.payload); // phòng khi timeout\nmsg.topic = \"temperature\";\nreturn msg;",
         "outputs": 1,
@@ -1626,16 +1610,16 @@
         "y": 1120,
         "wires": [
             [
-                "a894ae28847f6b80",
-                "0024f40c2c107898",
-                "3ca3dfef34cb57ab"
+                "04a54cfa60a34ca0",
+                "63398861ad7aeb53",
+                "2ff67f5f8993e152"
             ]
         ]
     },
     {
-        "id": "a894ae28847f6b80",
+        "id": "04a54cfa60a34ca0",
         "type": "join",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "mode": "custom",
         "build": "object",
@@ -1657,14 +1641,14 @@
         "y": 1200,
         "wires": [
             [
-                "17ca53845a5ab0d5"
+                "d303e59c435a2185"
             ]
         ]
     },
     {
-        "id": "ac92ab245e90197a",
+        "id": "bb661b03461c94be",
         "type": "mqtt out",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/Humidity/Threshold",
         "qos": "2",
@@ -1680,9 +1664,9 @@
         "wires": []
     },
     {
-        "id": "3f0f5da3ceb6be8c",
+        "id": "585294977a2adbbf",
         "type": "mqtt out",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/Temperature/Threshold",
         "qos": "2",
@@ -1698,9 +1682,9 @@
         "wires": []
     },
     {
-        "id": "4a52baf9ee6325b1",
+        "id": "45220187f7778aeb",
         "type": "mqtt out",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/Gas/Threshold",
         "qos": "2",
@@ -1716,9 +1700,9 @@
         "wires": []
     },
     {
-        "id": "98da560d45053259",
+        "id": "032ba90937a4cdcb",
         "type": "mqtt out",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/PM/Threshold",
         "qos": "2",
@@ -1734,9 +1718,9 @@
         "wires": []
     },
     {
-        "id": "bff23adeeba3e6d5",
+        "id": "487f331637fa539e",
         "type": "mqtt in",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "topic": "/wokwi/buzzer/alert",
         "qos": "2",
@@ -1750,14 +1734,14 @@
         "y": 1000,
         "wires": [
             [
-                "93ad0a8513ec352b"
+                "ab465d84821b68eb"
             ]
         ]
     },
     {
-        "id": "c473e9a2d399644a",
+        "id": "109678b162c7f071",
         "type": "debug",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -1771,9 +1755,9 @@
         "wires": []
     },
     {
-        "id": "cb25a2c5eb276265",
+        "id": "b0d47fc033e36f9c",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Lấy dữ liệu",
         "func": "if (msg.topic === \"Temperature\") {\n    flow.set(\"pending_Temperature\", Number(msg.payload)); \n}\nif (msg.topic === \"Humidity\") {\n    flow.set(\"pending_Humidity\", Number(msg.payload)); \n}\nif (msg.topic === \"Gas\") {\n    flow.set(\"pending_Gas\", Number(msg.payload)); \n}\nif (msg.topic === \"PM\") {\n    flow.set(\"pending_PM\", Number(msg.payload)); \n}\n\nreturn null; ",
         "outputs": 1,
@@ -1789,9 +1773,9 @@
         ]
     },
     {
-        "id": "0024f40c2c107898",
+        "id": "63398861ad7aeb53",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Kiểm tra ngưỡng",
         "func": "// Email nhận cảnh báo\nlet email = flow.get(\"email\");\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG (VUI LÒNG BẬT MÁY LỌC KHÔNG KHÍ)\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
         "outputs": 1,
@@ -1804,32 +1788,15 @@
         "y": 1320,
         "wires": [
             [
-                "5a9f9cf7fcbd7bde",
-                "0f799157011b5f70"
+                "ef4af17ba813da54",
+                "05de5ff021e6a292"
             ]
         ]
     },
     {
-        "id": "5a9f9cf7fcbd7bde",
-        "type": "e-mail",
-        "z": "8cde24c85d9833c4",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": true,
-        "tls": true,
-        "name": "",
-        "dname": "",
-        "x": 950,
-        "y": 1300,
-        "wires": []
-    },
-    {
-        "id": "0f799157011b5f70",
+        "id": "05de5ff021e6a292",
         "type": "debug",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "debug 3",
         "active": true,
         "tosidebar": true,
@@ -1844,9 +1811,9 @@
         "wires": []
     },
     {
-        "id": "36edf08aef486c3b",
+        "id": "eadbe2c9eee444cb",
         "type": "inject",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "",
         "props": [
             {
@@ -1864,14 +1831,14 @@
         "y": 1600,
         "wires": [
             [
-                "6f3fe46f33f8d347"
+                "3833e65e1afcb328"
             ]
         ]
     },
     {
-        "id": "3ca3dfef34cb57ab",
+        "id": "2ff67f5f8993e152",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Lấy dữ liệu",
         "func": "// Danh sách cảm biến cần theo dõi\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\",    name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\",         name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\",          name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Lấy dữ liệu thống kê hiện tại (trong ngày)\nlet changes = flow.get(\"sensorChanges\") || {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity:    { lastValue: null, lastTime: null, changes: [] },\n    gas:         { lastValue: null, lastTime: null, changes: [] },\n    pm:          { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n};\n\n// Xác định loại dữ liệu hiện tại\nlet type = msg.topic; // Ví dụ: \"temperature\", \"humidity\"\nlet value = Number(msg.payload);\nlet now = new Date().toISOString();\n\nif (!changes[type]) {\n    node.warn(`Không xác định loại dữ liệu: ${type}`);\n    return null;\n}\n\nlet sensor = changes[type];\n\n// Nếu giá trị thay đổi so với lần trước\nif (sensor.lastValue === null || sensor.lastValue !== value) {\n    sensor.lastValue = value;\n    sensor.lastTime = now;\n    sensor.changes.push({ value: value, time: now });\n\n    let threshold = flow.get(`pending_${type.charAt(0).toUpperCase() + type.slice(1)}`);\n    if (threshold !== undefined && value > threshold) {\n        changes.alerts[type] += 1;\n    }\n}\n\n// Lưu lại\nchanges[type] = sensor;\nflow.set(\"sensorChanges\", changes);\n\nreturn null; // Không gửi ra đâu cả\n",
         "outputs": 1,
@@ -1884,14 +1851,14 @@
         "y": 1420,
         "wires": [
             [
-                "656d7d6a5d3fd8dc"
+                "55f7c303fd81f008"
             ]
         ]
     },
     {
-        "id": "656d7d6a5d3fd8dc",
+        "id": "55f7c303fd81f008",
         "type": "debug",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "debug 4",
         "active": true,
         "tosidebar": true,
@@ -1906,9 +1873,9 @@
         "wires": []
     },
     {
-        "id": "6f3fe46f33f8d347",
+        "id": "3833e65e1afcb328",
         "type": "function",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "Tổng hợp",
         "func": "// Lấy dữ liệu đã lưu trong ngày\nlet changes = flow.get(\"sensorChanges\");\nif (!changes) {\n    node.warn(\"Chưa có dữ liệu để báo cáo\");\n    return null;\n}\n\n// Danh sách cảm biến\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\",    name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\",         name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\",          name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\nlet reportText = \"BÁO CÁO TỔNG HỢP NGÀY\\n\\n\";\n\n// Tính toán cho từng cảm biến\nsensors.forEach(sensor => {\n    let data = changes[sensor.key]?.changes || [];\n    if (data.length === 0) {\n        reportText += `${sensor.name}: Không có dữ liệu\\n\\n`;\n        return;\n    }\n\n    // Tìm max, min, avg\n    let maxVal = -Infinity, minVal = Infinity, sum = 0;\n    let maxTime = null, minTime = null;\n\n    data.forEach(d => {\n        if (d.value > maxVal) {\n            maxVal = d.value;\n            maxTime = d.time;\n        }\n        if (d.value < minVal) {\n            minVal = d.value;\n            minTime = d.time;\n        }\n        sum += d.value;\n    });\n\n    let avg = (sum / data.length).toFixed(2);\n\n    // Số lần cảnh báo\n    let alertCount = changes.alerts?.[sensor.key] || 0;\n\n    // Ghi vào báo cáo\n    reportText += `${sensor.name}:\\n`;\n    reportText += `  - Max: ${maxVal}${sensor.unit} (lúc ${maxTime})\\n`;\n    reportText += `  - Min: ${minVal}${sensor.unit} (lúc ${minTime})\\n`;\n    reportText += `  - Avg: ${avg}${sensor.unit}\\n`;\n    reportText += `  - Số lần cảnh báo: ${alertCount}\\n\\n`;\n});\n\n// Gửi email\nlet email = flow.get(\"email\");//\"felina56723t@gmail.com\";\nmsg.to = email;\nmsg.topic = \"Báo cáo tổng hợp trong ngày\";\nmsg.payload = reportText;\n\n// Reset dữ liệu để bắt đầu ngày mới\nflow.set(\"sensorChanges\", {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity:    { lastValue: null, lastTime: null, changes: [] },\n    gas:         { lastValue: null, lastTime: null, changes: [] },\n    pm:          { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n});\n\nreturn msg;\n",
         "outputs": 1,
@@ -1921,32 +1888,15 @@
         "y": 1600,
         "wires": [
             [
-                "f28a5ad26772f538",
-                "4d03d45bf31f1654"
+                "757528e2a1675bbd",
+                "aa3a8ea8e43cf016"
             ]
         ]
     },
     {
-        "id": "f28a5ad26772f538",
-        "type": "e-mail",
-        "z": "8cde24c85d9833c4",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": true,
-        "tls": true,
-        "name": "",
-        "dname": "",
-        "x": 870,
-        "y": 1600,
-        "wires": []
-    },
-    {
-        "id": "4d03d45bf31f1654",
+        "id": "aa3a8ea8e43cf016",
         "type": "debug",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "debug 5",
         "active": true,
         "tosidebar": true,
@@ -1961,9 +1911,59 @@
         "wires": []
     },
     {
-        "id": "acb9c8bad82e7b7e",
+        "id": "ef4af17ba813da54",
+        "type": "e-mail",
+        "z": "f92df69886aea466",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 950,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "757528e2a1675bbd",
+        "type": "e-mail",
+        "z": "f92df69886aea466",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 870,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "b6066317a55513e9",
+        "type": "firebase modify",
+        "z": "f92df69886aea466",
+        "name": "",
+        "firebaseconfig": "",
+        "childpath": "msg.childpath",
+        "method": "push",
+        "value": "msg.payload",
+        "priority": "msg.priority",
+        "x": 1360,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86530398a1886491",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -1971,9 +1971,9 @@
         "height": 1
     },
     {
-        "id": "39386f72c2326c6c",
+        "id": "487b8d56a3640744",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -1981,9 +1981,9 @@
         "height": 1
     },
     {
-        "id": "204e481fc15b1882",
+        "id": "136f618f76053897",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -1991,9 +1991,9 @@
         "height": 1
     },
     {
-        "id": "151ea42fdfaa1c25",
+        "id": "6215d6b0060294d0",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2001,9 +2001,9 @@
         "height": 1
     },
     {
-        "id": "077a6357fd7eb783",
+        "id": "ef475be026a3fb2e",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2011,9 +2011,9 @@
         "height": 1
     },
     {
-        "id": "24495c28a9036059",
+        "id": "161b4d6aab11c922",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2021,9 +2021,9 @@
         "height": 1
     },
     {
-        "id": "207a4da3a05966dd",
+        "id": "3cd4271c1b6bd7c1",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2031,9 +2031,9 @@
         "height": 1
     },
     {
-        "id": "5c777c6af8c083b8",
+        "id": "cb0f1b1dd174e73c",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2041,9 +2041,9 @@
         "height": 1
     },
     {
-        "id": "ec45dc144ef5ea93",
+        "id": "8c18926b5bf29ca2",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2051,9 +2051,9 @@
         "height": 1
     },
     {
-        "id": "4542a8b61df3f9ce",
+        "id": "dec5eacce178f394",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2061,9 +2061,9 @@
         "height": 1
     },
     {
-        "id": "fcbe7a3b14affd76",
+        "id": "944472dfd2abebb3",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "",
         "order": 5,
@@ -2071,9 +2071,9 @@
         "height": 1
     },
     {
-        "id": "70d9709468851cb0",
+        "id": "d6d125fa0a584ec2",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "login_group",
         "order": 3,
@@ -2081,9 +2081,9 @@
         "height": 1
     },
     {
-        "id": "6f21aa4e7d2daca1",
+        "id": "8dec1bc222a47723",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "login_group",
         "order": 5,
@@ -2091,9 +2091,9 @@
         "height": 1
     },
     {
-        "id": "0d3dcb87e47735e4",
+        "id": "2015c44845a413e5",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "login_group",
         "order": 6,
@@ -2101,9 +2101,9 @@
         "height": 1
     },
     {
-        "id": "1a9245fc03d0e0ab",
+        "id": "3cf62078bb87de9a",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "login_group",
         "order": 8,
@@ -2111,9 +2111,9 @@
         "height": 1
     },
     {
-        "id": "72afb59cb01086c4",
+        "id": "968a018046b86a3e",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "login_group",
         "order": 9,
@@ -2121,9 +2121,9 @@
         "height": 1
     },
     {
-        "id": "5d0b376ab3dc0c7b",
+        "id": "97a311fd744fb82a",
         "type": "ui_spacer",
-        "z": "8cde24c85d9833c4",
+        "z": "f92df69886aea466",
         "name": "spacer",
         "group": "login_group",
         "order": 11,
