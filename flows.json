@@ -1561,7 +1561,8 @@
         "wires": [
             [
                 "a894ae28847f6b80",
-                "0024f40c2c107898"
+                "0024f40c2c107898",
+                "3ca3dfef34cb57ab"
             ]
         ]
     },
@@ -1582,7 +1583,8 @@
         "wires": [
             [
                 "a894ae28847f6b80",
-                "0024f40c2c107898"
+                "0024f40c2c107898",
+                "3ca3dfef34cb57ab"
             ]
         ]
     },
@@ -1603,7 +1605,8 @@
         "wires": [
             [
                 "a894ae28847f6b80",
-                "0024f40c2c107898"
+                "0024f40c2c107898",
+                "3ca3dfef34cb57ab"
             ]
         ]
     },
@@ -1624,7 +1627,8 @@
         "wires": [
             [
                 "a894ae28847f6b80",
-                "0024f40c2c107898"
+                "0024f40c2c107898",
+                "3ca3dfef34cb57ab"
             ]
         ]
     },
@@ -1789,7 +1793,7 @@
         "type": "function",
         "z": "8cde24c85d9833c4",
         "name": "Kiểm tra ngưỡng",
-        "func": "// Email nhận cảnh báo\nlet email = flow.get(\"email\");\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
+        "func": "// Email nhận cảnh báo\nlet email = flow.get(\"email\");\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG (VUI LÒNG BẬT MÁY LỌC KHÔNG KHÍ)\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1797,7 +1801,7 @@
         "finalize": "",
         "libs": [],
         "x": 730,
-        "y": 1400,
+        "y": 1320,
         "wires": [
             [
                 "5a9f9cf7fcbd7bde",
@@ -1818,8 +1822,8 @@
         "tls": true,
         "name": "",
         "dname": "",
-        "x": 930,
-        "y": 1340,
+        "x": 950,
+        "y": 1300,
         "wires": []
     },
     {
@@ -1835,8 +1839,125 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
+        "x": 960,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "36edf08aef486c3b",
+        "type": "inject",
+        "z": "8cde24c85d9833c4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 470,
+        "y": 1600,
+        "wires": [
+            [
+                "6f3fe46f33f8d347"
+            ]
+        ]
+    },
+    {
+        "id": "3ca3dfef34cb57ab",
+        "type": "function",
+        "z": "8cde24c85d9833c4",
+        "name": "Lấy dữ liệu",
+        "func": "// Danh sách cảm biến cần theo dõi\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\",    name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\",         name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\",          name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Lấy dữ liệu thống kê hiện tại (trong ngày)\nlet changes = flow.get(\"sensorChanges\") || {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity:    { lastValue: null, lastTime: null, changes: [] },\n    gas:         { lastValue: null, lastTime: null, changes: [] },\n    pm:          { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n};\n\n// Xác định loại dữ liệu hiện tại\nlet type = msg.topic; // Ví dụ: \"temperature\", \"humidity\"\nlet value = Number(msg.payload);\nlet now = new Date().toISOString();\n\nif (!changes[type]) {\n    node.warn(`Không xác định loại dữ liệu: ${type}`);\n    return null;\n}\n\nlet sensor = changes[type];\n\n// Nếu giá trị thay đổi so với lần trước\nif (sensor.lastValue === null || sensor.lastValue !== value) {\n    sensor.lastValue = value;\n    sensor.lastTime = now;\n    sensor.changes.push({ value: value, time: now });\n\n    let threshold = flow.get(`pending_${type.charAt(0).toUpperCase() + type.slice(1)}`);\n    if (threshold !== undefined && value > threshold) {\n        changes.alerts[type] += 1;\n    }\n}\n\n// Lưu lại\nchanges[type] = sensor;\nflow.set(\"sensorChanges\", changes);\n\nreturn null; // Không gửi ra đâu cả\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1420,
+        "wires": [
+            [
+                "656d7d6a5d3fd8dc"
+            ]
+        ]
+    },
+    {
+        "id": "656d7d6a5d3fd8dc",
+        "type": "debug",
+        "z": "8cde24c85d9833c4",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
         "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "6f3fe46f33f8d347",
+        "type": "function",
+        "z": "8cde24c85d9833c4",
+        "name": "Tổng hợp",
+        "func": "// Lấy dữ liệu đã lưu trong ngày\nlet changes = flow.get(\"sensorChanges\");\nif (!changes) {\n    node.warn(\"Chưa có dữ liệu để báo cáo\");\n    return null;\n}\n\n// Danh sách cảm biến\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\",    name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\",         name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\",          name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\nlet reportText = \"BÁO CÁO TỔNG HỢP NGÀY\\n\\n\";\n\n// Tính toán cho từng cảm biến\nsensors.forEach(sensor => {\n    let data = changes[sensor.key]?.changes || [];\n    if (data.length === 0) {\n        reportText += `${sensor.name}: Không có dữ liệu\\n\\n`;\n        return;\n    }\n\n    // Tìm max, min, avg\n    let maxVal = -Infinity, minVal = Infinity, sum = 0;\n    let maxTime = null, minTime = null;\n\n    data.forEach(d => {\n        if (d.value > maxVal) {\n            maxVal = d.value;\n            maxTime = d.time;\n        }\n        if (d.value < minVal) {\n            minVal = d.value;\n            minTime = d.time;\n        }\n        sum += d.value;\n    });\n\n    let avg = (sum / data.length).toFixed(2);\n\n    // Số lần cảnh báo\n    let alertCount = changes.alerts?.[sensor.key] || 0;\n\n    // Ghi vào báo cáo\n    reportText += `${sensor.name}:\\n`;\n    reportText += `  - Max: ${maxVal}${sensor.unit} (lúc ${maxTime})\\n`;\n    reportText += `  - Min: ${minVal}${sensor.unit} (lúc ${minTime})\\n`;\n    reportText += `  - Avg: ${avg}${sensor.unit}\\n`;\n    reportText += `  - Số lần cảnh báo: ${alertCount}\\n\\n`;\n});\n\n// Gửi email\nlet email = flow.get(\"email\");//\"felina56723t@gmail.com\";\nmsg.to = email;\nmsg.topic = \"Báo cáo tổng hợp trong ngày\";\nmsg.payload = reportText;\n\n// Reset dữ liệu để bắt đầu ngày mới\nflow.set(\"sensorChanges\", {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity:    { lastValue: null, lastTime: null, changes: [] },\n    gas:         { lastValue: null, lastTime: null, changes: [] },\n    pm:          { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n});\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1600,
+        "wires": [
+            [
+                "f28a5ad26772f538",
+                "4d03d45bf31f1654"
+            ]
+        ]
+    },
+    {
+        "id": "f28a5ad26772f538",
+        "type": "e-mail",
+        "z": "8cde24c85d9833c4",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 870,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "4d03d45bf31f1654",
+        "type": "debug",
+        "z": "8cde24c85d9833c4",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1680,
         "wires": []
     },
     {
