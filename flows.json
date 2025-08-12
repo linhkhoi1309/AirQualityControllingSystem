@@ -1597,7 +1597,7 @@
         "type": "function",
         "z": "2219b06636009d6c",
         "name": "Kiểm tra ngưỡng",
-        "func": "// Email nhận cảnh báo\nlet email = flow.get(\"email\");\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG (VUI LÒNG BẬT MÁY LỌC KHÔNG KHÍ)\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
+        "func": "// Lấy email từ các trường hợp khác nhau\nlet email = flow.get(\"email_login\") || flow.get(\"email\") || flow.get(\"email_rs_pass\");\n\n// Nếu không có email thì dừng\nif (!email) {\n    node.warn(\"Không tìm thấy email người nhận\");\n    return null;\n}\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG (VUI LÒNG BẬT MÁY LỌC KHÔNG KHÍ)\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1641,13 +1641,13 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 23 * * *",
+        "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 470,
+        "x": 460,
         "y": 1600,
         "wires": [
             [
@@ -1660,7 +1660,7 @@
         "type": "function",
         "z": "2219b06636009d6c",
         "name": "Lấy dữ liệu",
-        "func": "// Danh sách cảm biến cần theo dõi\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\",    name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\",         name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\",          name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Lấy dữ liệu thống kê hiện tại (trong ngày)\nlet changes = flow.get(\"sensorChanges\") || {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity:    { lastValue: null, lastTime: null, changes: [] },\n    gas:         { lastValue: null, lastTime: null, changes: [] },\n    pm:          { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n};\n\n// Xác định loại dữ liệu hiện tại\nlet type = msg.topic; // Ví dụ: \"temperature\", \"humidity\"\nlet value = Number(msg.payload);\nlet now = new Date().toISOString();\n\nif (!changes[type]) {\n    node.warn(`Không xác định loại dữ liệu: ${type}`);\n    return null;\n}\n\nlet sensor = changes[type];\n\n// Nếu giá trị thay đổi so với lần trước\nif (sensor.lastValue === null || sensor.lastValue !== value) {\n    sensor.lastValue = value;\n    sensor.lastTime = now;\n    sensor.changes.push({ value: value, time: now });\n\n    let threshold = flow.get(`pending_${type.charAt(0).toUpperCase() + type.slice(1)}`);\n    if (threshold !== undefined && value > threshold) {\n        changes.alerts[type] += 1;\n    }\n}\n\n// Lưu lại\nchanges[type] = sensor;\nflow.set(\"sensorChanges\", changes);\n\nreturn null; // Không gửi ra đâu cả\n",
+        "func": "// Hàm format epoch ms -> \"dd/MM/yyyy HH:mm:ss\" theo GMT+7\nfunction formatMsToVN(ms) {\n    const vn = new Date(ms + 7 * 60 * 60 * 1000); // shift UTC -> VN\n    const dd = String(vn.getUTCDate()).padStart(2, '0');\n    const mm = String(vn.getUTCMonth() + 1).padStart(2, '0');\n    const yyyy = vn.getUTCFullYear();\n    const hh = String(vn.getUTCHours()).padStart(2, '0');\n    const mi = String(vn.getUTCMinutes()).padStart(2, '0');\n    const ss = String(vn.getUTCSeconds()).padStart(2, '0');\n    return `${hh}:${mi}:${ss} ${dd}/${mm}/${yyyy}`;\n}\n\n// Danh sách cảm biến cần theo dõi (giữ nguyên nếu bạn đã có)\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Lấy dữ liệu thống kê hiện tại (trong ngày)\nlet changes = flow.get(\"sensorChanges\") || {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity: { lastValue: null, lastTime: null, changes: [] },\n    gas: { lastValue: null, lastTime: null, changes: [] },\n    pm: { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n};\n\n// Xác định loại dữ liệu hiện tại\nlet type = msg.topic; // Ví dụ: \"temperature\", \"humidity\"\nlet value = Number(msg.payload);\n\nif (!changes[type]) {\n    node.warn(`Không xác định loại dữ liệu: ${type}`);\n    return null;\n}\n\nlet sensor = changes[type];\n\n// Lấy thời gian hiện tại chuẩn (epoch ms UTC)\nlet nowMs = Date.now();\nlet nowStr = formatMsToVN(nowMs);\n\n// Nếu giá trị thay đổi so với lần trước\nif (sensor.lastValue === null || sensor.lastValue !== value) {\n    sensor.lastValue = value;\n    sensor.lastTime = nowStr;\n    // lưu cả epoch ms và chuỗi format VN\n    sensor.changes.push({ value: value, timeMs: nowMs, timeStr: nowStr });\n\n    let threshold = flow.get(`pending_${type.charAt(0).toUpperCase() + type.slice(1)}`);\n    if (threshold !== undefined && value > threshold) {\n        changes.alerts[type] += 1;\n    }\n}\n\n// Lưu lại\nchanges[type] = sensor;\nflow.set(\"sensorChanges\", changes);\n\nreturn null;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1697,14 +1697,14 @@
         "type": "function",
         "z": "2219b06636009d6c",
         "name": "Tổng hợp",
-        "func": "// Lấy dữ liệu đã lưu trong ngày\nlet changes = flow.get(\"sensorChanges\");\nif (!changes) {\n    node.warn(\"Chưa có dữ liệu để báo cáo\");\n    return null;\n}\n\n// Danh sách cảm biến\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\",    name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\",         name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\",          name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\nlet reportText = \"BÁO CÁO TỔNG HỢP NGÀY\\n\\n\";\n\n// Tính toán cho từng cảm biến\nsensors.forEach(sensor => {\n    let data = changes[sensor.key]?.changes || [];\n    if (data.length === 0) {\n        reportText += `${sensor.name}: Không có dữ liệu\\n\\n`;\n        return;\n    }\n\n    // Tìm max, min, avg\n    let maxVal = -Infinity, minVal = Infinity, sum = 0;\n    let maxTime = null, minTime = null;\n\n    data.forEach(d => {\n        if (d.value > maxVal) {\n            maxVal = d.value;\n            maxTime = d.time;\n        }\n        if (d.value < minVal) {\n            minVal = d.value;\n            minTime = d.time;\n        }\n        sum += d.value;\n    });\n\n    let avg = (sum / data.length).toFixed(2);\n\n    // Số lần cảnh báo\n    let alertCount = changes.alerts?.[sensor.key] || 0;\n\n    // Ghi vào báo cáo\n    reportText += `${sensor.name}:\\n`;\n    reportText += `  - Max: ${maxVal}${sensor.unit} (lúc ${maxTime})\\n`;\n    reportText += `  - Min: ${minVal}${sensor.unit} (lúc ${minTime})\\n`;\n    reportText += `  - Avg: ${avg}${sensor.unit}\\n`;\n    reportText += `  - Số lần cảnh báo: ${alertCount}\\n\\n`;\n});\n\n// Gửi email\nlet email = flow.get(\"email\");//\"felina56723t@gmail.com\";\nmsg.to = email;\nmsg.topic = \"Báo cáo tổng hợp trong ngày\";\nmsg.payload = reportText;\n\n// Reset dữ liệu để bắt đầu ngày mới\nflow.set(\"sensorChanges\", {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity:    { lastValue: null, lastTime: null, changes: [] },\n    gas:         { lastValue: null, lastTime: null, changes: [] },\n    pm:          { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n});\n\nreturn msg;\n",
+        "func": "// Lấy dữ liệu đã lưu trong ngày\nlet changes = flow.get(\"sensorChanges\");\nif (!changes) {\n    node.warn(\"Chưa có dữ liệu để báo cáo\");\n    return null;\n}\n\n// Hàm format epoch ms -> \"dd/MM/yyyy HH:mm:ss\" theo GMT+7\nfunction formatMsToVN(ms) {\n    const vn = new Date(ms + 7 * 60 * 60 * 1000); // shift UTC -> VN\n    const dd = String(vn.getUTCDate()).padStart(2, '0');\n    const mm = String(vn.getUTCMonth() + 1).padStart(2, '0');\n    const yyyy = vn.getUTCFullYear();\n    const hh = String(vn.getUTCHours()).padStart(2, '0');\n    const mi = String(vn.getUTCMinutes()).padStart(2, '0');\n    const ss = String(vn.getUTCSeconds()).padStart(2, '0');\n    return `${hh}:${mi}:${ss} ${dd}/${mm}/${yyyy}`;\n}\n// Fallback: parse các chuỗi cũ dạng \"dd/MM/yyyy HH:mm:ss\" -> epoch ms (UTC)\nfunction parseVNStringToMs(s) {\n    if (!s || typeof s !== 'string') return NaN;\n    const m = s.match(/^(\\d{2})\\/(\\d{2})\\/(\\d{4})\\s+(\\d{2}):(\\d{2}):(\\d{2})$/);\n    if (!m) return NaN;\n    const day = Number(m[1]), month = Number(m[2]), year = Number(m[3]);\n    const hh = Number(m[4]), mi = Number(m[5]), ss = Number(m[6]);\n    // VN time -> UTC epoch ms = Date.UTC(... with hour -7)\n    return Date.UTC(year, month - 1, day, hh - 7, mi, ss);\n}\n\n// Danh sách cảm biến\nlet sensors = [\n    { key: \"temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\nlet reportText = \"BÁO CÁO TỔNG HỢP NGÀY\\n\\n\";\n\n// Tính toán cho từng cảm biến\nsensors.forEach(sensor => {\n    let data = changes[sensor.key]?.changes || [];\n    if (data.length === 0) {\n        reportText += `${sensor.name}: Không có dữ liệu\\n\\n`;\n        return;\n    }\n\n    // Tìm max, min, avg -- dùng giá trị; lưu timeMs tương ứng (fallback parse nếu cần)\n    let maxVal = -Infinity, minVal = Infinity, sum = 0;\n    let maxTimeMs = null, minTimeMs = null;\n\n    data.forEach(d => {\n        const v = Number(d.value);\n        // lấy epoch ms ưu tiên timeMs nếu có, nếu không thử parse timeStr hoặc ISO\n        let tMs = NaN;\n        if (d.timeMs !== undefined) tMs = Number(d.timeMs);\n        else if (typeof d.timeStr === 'string' && d.timeStr.match(/^\\d{2}\\/\\d{2}\\/\\d{4}/)) tMs = parseVNStringToMs(d.timeStr);\n        else if (typeof d.time === 'string' && d.time.includes('T')) tMs = new Date(d.time).getTime();\n\n        if (v > maxVal) {\n            maxVal = v;\n            maxTimeMs = tMs;\n        }\n        if (v < minVal) {\n            minVal = v;\n            minTimeMs = tMs;\n        }\n        sum += v;\n    });\n\n    let avg = (sum / data.length).toFixed(2);\n\n    // Số lần cảnh báo\n    let alertCount = changes.alerts?.[sensor.key] || 0;\n\n    // Format thời gian để hiển thị (nếu không có ms thì in \"Không rõ\")\n    let maxTimeStr = (maxTimeMs || maxTimeMs === 0) ? formatMsToVN(maxTimeMs) : \"Không rõ\";\n    let minTimeStr = (minTimeMs || minTimeMs === 0) ? formatMsToVN(minTimeMs) : \"Không rõ\";\n\n    // Ghi vào báo cáo\n    reportText += `${sensor.name}:\\n`;\n    reportText += `  - Max: ${maxVal}${sensor.unit} (lúc ${maxTimeStr})\\n`;\n    reportText += `  - Min: ${minVal}${sensor.unit} (lúc ${minTimeStr})\\n`;\n    reportText += `  - Avg: ${avg}${sensor.unit}\\n`;\n    reportText += `  - Số lần cảnh báo: ${alertCount}\\n\\n`;\n});\n\n// Lấy email từ các trường hợp khác nhau\nlet email = flow.get(\"email_login\") || flow.get(\"email\") || flow.get(\"email_rs_pass\");\n\n// Nếu không có email thì dừng\nif (!email) {\n    node.warn(\"Không tìm thấy email người nhận\");\n    return null;\n}\n\nmsg.to = email;\nmsg.topic = \"BÁO CÁO TỔNG HỢP TRONG NGÀY\";\nmsg.payload = reportText;\n\n// Reset dữ liệu để bắt đầu ngày mới (nếu vẫn cần)\nflow.set(\"sensorChanges\", {\n    temperature: { lastValue: null, lastTime: null, changes: [] },\n    humidity: { lastValue: null, lastTime: null, changes: [] },\n    gas: { lastValue: null, lastTime: null, changes: [] },\n    pm: { lastValue: null, lastTime: null, changes: [] },\n    alerts: { temperature: 0, humidity: 0, gas: 0, pm: 0 }\n});\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 680,
         "y": 1600,
         "wires": [
             [
@@ -1774,7 +1774,7 @@
         "method": "push",
         "value": "msg.payload",
         "priority": "msg.priority",
-        "x": 1540,
+        "x": 1720,
         "y": 1200,
         "wires": [
             []
@@ -1908,7 +1908,7 @@
                 "value": "1"
             }
         ],
-        "x": 380,
+        "x": 400,
         "y": 1760,
         "wires": [
             [
@@ -1967,7 +1967,7 @@
         "repeatifnull": false,
         "eventType": "value",
         "queries": [],
-        "x": 550,
+        "x": 610,
         "y": 1920,
         "wires": [
             [
@@ -1982,7 +1982,7 @@
         "id": "e8c9774bc5447651",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "function 1",
+        "name": "Lấy ngày",
         "func": "let dataObj = msg.payload; // dữ liệu từ firebase node trả về (object)\nlet data = Object.keys(dataObj).map(k => dataObj[k]); // chuyển thành mảng\n\nlet minDate = data.reduce((min, row) => {\n    let d = new Date(row.timestamp);\n    return d < min ? d : min;\n}, new Date(data[0].timestamp));\n\nlet maxDate = data.reduce((max, row) => {\n    let d = new Date(row.timestamp);\n    return d > max ? d : max;\n}, new Date(data[0].timestamp));\n\nreturn [\n    {\n        payload: minDate.toISOString().slice(0, 10),\n        topic: \"start_date\"\n    },\n    {\n        payload: maxDate.toISOString().slice(0, 10),\n        topic: \"end_date\"\n    }\n];\n",
         "outputs": 2,
         "timeout": 0,
@@ -2005,7 +2005,7 @@
         "id": "06b729edb35737bf",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "function 2",
+        "name": "Lấy dữ liệu",
         "func": "let rawData = msg.payload || {};\nlet dataArray = Object.values(rawData);  // Lấy mảng các giá trị object con\n\nflow.set(\"allData\", dataArray);\nmsg.payload = flow.get(\"allData\");\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
@@ -2013,13 +2013,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 1960,
+        "x": 1150,
+        "y": 1940,
         "wires": [
             [
-                "1ab672ae7b918842",
-                "6df734410e79b410",
-                "85fc59f02b1e8503"
+                "6df734410e79b410"
             ]
         ]
     },
@@ -2027,15 +2025,15 @@
         "id": "0330cebdc3a4e0a7",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "function 8",
-        "func": "let data = msg.payload; // Dữ liệu từ node firebase trả về\n\nlet dailyData = {};\n\nfor (let key in data) {\n    let entry = data[key];\n    let temp = Number(entry.temperature);\n    let humi = Number(entry.humidity);\n    let dateStr = new Date(entry.timestamp).toISOString().split(\"T\")[0];\n\n    if (!isNaN(temp) && !isNaN(humi)) {\n        if (!dailyData[dateStr]) {\n            dailyData[dateStr] = { tempSum: 0, humiSum: 0, count: 0 };\n        }\n        dailyData[dateStr].tempSum += temp;\n        dailyData[dateStr].humiSum += humi;\n        dailyData[dateStr].count += 1;\n    }\n}\n\nlet temperature = [];\nlet humidity = [];\nlet labels = [];\n\nfor (let date in dailyData) {\n    let avgTemp = dailyData[date].tempSum / dailyData[date].count;\n    let avgHumi = dailyData[date].humiSum / dailyData[date].count;\n    temperature.push(avgTemp);\n    humidity.push(avgHumi);\n    labels.push(date);\n}\n\nmsg.payload = [\n    {\n        series: [\"Temperature\", \"Humidity\"],\n        data: [temperature, humidity],\n        labels: labels\n    }\n];\n\nreturn msg;\n",
+        "name": "Lây dữ liệu nhiệt độ, độ ẩm",
+        "func": "let data = msg.payload; // Dữ liệu từ node firebase trả về\n\nlet dailyData = {};\n\nfor (let key in data) {\n    let entry = data[key];\n    let temp = Number(entry.temperature);\n    let humi = Number(entry.humidity);\n    let dateStr = new Date(entry.timestamp).toISOString().split(\"T\")[0];\n\n    if (!isNaN(temp) && !isNaN(humi)) {\n        if (!dailyData[dateStr]) {\n            dailyData[dateStr] = { tempSum: 0, humiSum: 0, count: 0 };\n        }\n        dailyData[dateStr].tempSum += temp;\n        dailyData[dateStr].humiSum += humi;\n        dailyData[dateStr].count += 1;\n    }\n}\n\nlet temperature = [];\nlet humidity = [];\nlet labels = [];\n\nfor (let date in dailyData) {\n    let avgTemp = dailyData[date].tempSum / dailyData[date].count;\n    let avgHumi = dailyData[date].humiSum / dailyData[date].count;\n    temperature.push(avgTemp);\n    humidity.push(avgHumi);\n    labels.push(date);\n}\n\nmsg.payload = [\n    {\n        series: [\"Average Temperature\", \"Average Humidity\"],\n        data: [temperature, humidity],\n        labels: labels\n    }\n];\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 1100,
         "y": 2020,
         "wires": [
             [
@@ -2047,7 +2045,7 @@
         "id": "5d5a43c2d0a8966d",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "function 9",
+        "name": "Lấy dữ liệu gas, pm",
         "func": "let data = msg.payload; // dữ liệu từ Firebase node trả về\n\nlet dailyData = {};\n\n// Gom nhóm dữ liệu theo ngày và tính trung bình\nfor (let key in data) {\n    let entry = data[key];\n    let gas = Number(entry.gas);\n    let pm = Number(entry.pm);\n    let dateStr = new Date(entry.timestamp).toISOString().split(\"T\")[0];\n\n    if (!isNaN(gas) && !isNaN(pm)) {\n        if (!dailyData[dateStr]) {\n            dailyData[dateStr] = { gasSum: 0, pmSum: 0, count: 0 };\n        }\n        dailyData[dateStr].gasSum += gas;\n        dailyData[dateStr].pmSum += pm;\n        dailyData[dateStr].count += 1;\n    }\n}\n\n// Chuyển sang mảng để dễ sắp xếp theo ngày\nlet dailyArray = Object.keys(dailyData).map(date => ({\n    date: date,\n    avgGas: dailyData[date].gasSum / dailyData[date].count,\n    avgPM: dailyData[date].pmSum / dailyData[date].count\n}));\n\n// Sắp xếp theo ngày tăng dần\ndailyArray.sort(function (a, b) {\n    return new Date(a.date).getTime() - new Date(b.date).getTime();\n});\n// Chỉ lấy N ngày gần nhất\nlet N = 7; // số ngày muốn hiển thị\nlet recentData = dailyArray.slice(-N);\n\nlet gasArray = [];\nlet pmArray = [];\nlet labels = [];\n\nrecentData.forEach(item => {\n    gasArray.push(item.avgGas);\n    pmArray.push(item.avgPM);\n    labels.push(item.date);\n});\n\nmsg.payload = [\n    {\n        series: [\"Gas\", \"PM\"],\n        data: [gasArray, pmArray],\n        labels: labels\n    }\n];\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
@@ -2055,7 +2053,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 1010,
         "y": 2100,
         "wires": [
             [
@@ -2173,7 +2171,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 1550,
-        "y": 1860,
+        "y": 1880,
         "wires": [
             [
                 "85fc59f02b1e8503"
@@ -2189,7 +2187,7 @@
         "order": 7,
         "width": 0,
         "height": 0,
-        "label": "Chất lương không khí",
+        "label": "Chất lượng không khí",
         "chartType": "bar",
         "legend": "false",
         "xformat": "HH:mm:ss",
@@ -2218,7 +2216,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1240,
+        "x": 1900,
         "y": 2100,
         "wires": [
             []
@@ -2228,7 +2226,7 @@
         "id": "75cff54dc07cb40d",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "function 10",
+        "name": "Lấy ngày BD",
         "func": "flow.set(msg.topic, msg.payload);  // topic = start_date hoặc end_date\nreturn null;",
         "outputs": 1,
         "timeout": 0,
@@ -2240,7 +2238,6 @@
         "y": 1820,
         "wires": [
             [
-                "1ab672ae7b918842",
                 "fb2e74eb8412ec2c"
             ]
         ]
@@ -2249,7 +2246,7 @@
         "id": "48c0e62818c373f4",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "exportEndDate",
+        "name": "Lấy ngày KT",
         "func": "flow.set(msg.topic, msg.payload);  // topic = start_date hoặc end_date\nreturn null;",
         "outputs": 1,
         "timeout": 0,
@@ -2257,20 +2254,18 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
+        "x": 1330,
         "y": 1880,
         "wires": [
-            [
-                "1ab672ae7b918842"
-            ]
+            []
         ]
     },
     {
         "id": "85fc59f02b1e8503",
         "type": "function",
         "z": "2219b06636009d6c",
-        "name": "function 11",
-        "func": "/* // Lấy dữ liệu từ flow\nlet rawData = flow.get(\"allData\") || {};\nlet data = Array.isArray(rawData) ? rawData : Object.values(rawData);\n\n// Lấy timestamp từ date picker\nlet start = flow.get(\"start_date\"); // dạng number (ms)\nlet end = flow.get(\"end_date\");     // dạng number (ms)\n\nif (!start || !end) {\n    node.warn(\"Chưa chọn ngày bắt đầu hoặc kết thúc\");\n    return null;\n}\n\n// Chuyển sang Date object\nlet startDate = new Date(start);\nlet endDate = new Date(end);\n\n// Lọc dữ liệu\nlet filtered = data.filter(row => {\n    let d = new Date(row.timestamp); // Dùng timestamp của Firebase\n    return d >= startDate && d <= endDate;\n});\n\n// Gom nhóm dữ liệu theo ngày\nlet dailyData = {};\nfiltered.forEach(row => {\n    let temp = Number(row.temperature);\n    let humi = Number(row.humidity);\n    if (!isNaN(temp) && !isNaN(humi)) {\n        let dateStr = new Date(row.timestamp).toISOString().split(\"T\")[0];\n        if (!dailyData[dateStr]) {\n            dailyData[dateStr] = { tempSum: 0, humiSum: 0, count: 0 };\n        }\n        dailyData[dateStr].tempSum += temp;\n        dailyData[dateStr].humiSum += humi;\n        dailyData[dateStr].count++;\n    }\n});\n\n// Chuyển sang mảng và sắp xếp\nlet dailyArray = Object.keys(dailyData).map(date => ({\n    date: date,\n    avgTemp: dailyData[date].tempSum / dailyData[date].count,\n    avgHumi: dailyData[date].humiSum / dailyData[date].count\n}));\n\ndailyArray.sort(function (a, b) {\n    return new Date(a.date).getTime() - new Date(b.date).getTime();\n});\n\n// Format dữ liệu cho chart\nmsg.payload = [\n    {\n        series: [\"Temperature\", \"Humidity\"],\n        data: [\n            dailyArray.map(i => parseFloat(i.avgTemp.toFixed(2))),\n            dailyArray.map(i => parseFloat(i.avgHumi.toFixed(2)))\n        ],\n        labels: dailyArray.map(i => i.date)\n    }\n];\n\nreturn msg;\n */\n\nlet data = flow.get(\"allData\") || [];\n\nlet start = flow.get(\"start_date\");\nlet end = flow.get(\"end_date\");\n\nif (start == null || end == null) {\n    node.warn(\"Chưa chọn ngày bắt đầu hoặc kết thúc\");\n    return null;\n}\n\n// Chuyển end thành cuối ngày để lọc đủ\nlet endDate = new Date(end);\nendDate.setHours(23, 59, 59, 999);\nlet endTimestamp = endDate.getTime();\n\n// Chuyển start sang timestamp\nlet startTimestamp = Number(start);\n\n// Lọc theo trường timestamp\nlet filtered = data.filter(row => {\n    let t = new Date(row.timestamp).getTime();\n    return t >= startTimestamp && t <= endTimestamp;\n});\n\n// Nếu không có dữ liệu thì trả về mảng rỗng cho chart\nif (filtered.length === 0) {\n    msg.payload = [\n        {\n            series: [\"Temperature\", \"Humidity\"],\n            data: [[], []],\n            labels: []\n        }\n    ];\n    return msg;\n}\n\n// Nhóm theo ngày và tính trung bình từng ngày\n// Tạo một object để lưu trung bình theo ngày\nlet grouped = {};\n\nfiltered.forEach(row => {\n    let day = row.timestamp.substring(0, 10); // lấy YYYY-MM-DD\n    if (!grouped[day]) {\n        grouped[day] = { tempSum: 0, tempCount: 0, humiSum: 0, humiCount: 0 };\n    }\n    let temp = Number(row.temperature);\n    if (!isNaN(temp)) {\n        grouped[day].tempSum += temp;\n        grouped[day].tempCount++;\n    }\n    let humi = Number(row.humidity);\n    if (!isNaN(humi)) {\n        grouped[day].humiSum += humi;\n        grouped[day].humiCount++;\n    }\n});\n\n// Chuẩn bị dữ liệu cho chart\nlet labels = Object.keys(grouped).sort(); // ngày tăng dần\nlet avgTemps = [];\nlet avgHumis = [];\n\nlabels.forEach(day => {\n    let g = grouped[day];\n    avgTemps.push(g.tempCount ? parseFloat((g.tempSum / g.tempCount).toFixed(2)) : 0);\n    avgHumis.push(g.humiCount ? parseFloat((g.humiSum / g.humiCount).toFixed(2)) : 0);\n});\n\nmsg.payload = [\n    {\n        series: [\"Average Temperature\", \"Average Humidity\"],\n        data: [avgTemps, avgHumis],\n        labels: labels\n    }\n];\nmsg.ui_control = {\n    options: {\n        elements: {\n            line: {\n                fill: false\n            },\n            point: {\n                radius: 4,\n                hoverRadius: 6\n            }\n        }\n    }\n};\n\nreturn msg;\n",
+        "name": "Lọc dữ liệu",
+        "func": "let data = flow.get(\"allData\") || [];\n\nlet start = flow.get(\"start_date\");\nlet end = flow.get(\"end_date\");\n\nif (start == null || end == null) {\n    node.warn(\"Chưa chọn ngày bắt đầu hoặc kết thúc\");\n    return null;\n}\n\n// Chuyển end thành cuối ngày để lọc đủ\nlet endDate = new Date(end);\nendDate.setHours(23, 59, 59, 999);\nlet endTimestamp = endDate.getTime();\n\n// Chuyển start sang timestamp\nlet startTimestamp = Number(start);\n\n// Lọc theo trường timestamp\nlet filtered = data.filter(row => {\n    let t = new Date(row.timestamp).getTime();\n    return t >= startTimestamp && t <= endTimestamp;\n});\n\n// Nếu không có dữ liệu thì trả về mảng rỗng cho chart\nif (filtered.length === 0) {\n    msg.payload = [\n        {\n            series: [\"Temperature\", \"Humidity\"],\n            data: [[], []],\n            labels: []\n        }\n    ];\n    return msg;\n}\n\n// Nhóm theo ngày và tính trung bình từng ngày\n// Tạo một object để lưu trung bình theo ngày\nlet grouped = {};\n\nfiltered.forEach(row => {\n    let day = row.timestamp.substring(0, 10); // lấy YYYY-MM-DD\n    if (!grouped[day]) {\n        grouped[day] = { tempSum: 0, tempCount: 0, humiSum: 0, humiCount: 0 };\n    }\n    let temp = Number(row.temperature);\n    if (!isNaN(temp)) {\n        grouped[day].tempSum += temp;\n        grouped[day].tempCount++;\n    }\n    let humi = Number(row.humidity);\n    if (!isNaN(humi)) {\n        grouped[day].humiSum += humi;\n        grouped[day].humiCount++;\n    }\n});\n\n// Chuẩn bị dữ liệu cho chart\nlet labels = Object.keys(grouped).sort(); // ngày tăng dần\nlet avgTemps = [];\nlet avgHumis = [];\n\nlabels.forEach(day => {\n    let g = grouped[day];\n    avgTemps.push(g.tempCount ? parseFloat((g.tempSum / g.tempCount).toFixed(2)) : 0);\n    avgHumis.push(g.humiCount ? parseFloat((g.humiSum / g.humiCount).toFixed(2)) : 0);\n});\n\nmsg.payload = [\n    {\n        series: [\"Average Temperature\", \"Average Humidity\"],\n        data: [avgTemps, avgHumis],\n        labels: labels\n    }\n];\nmsg.ui_control = {\n    options: {\n        elements: {\n            line: {\n                fill: false\n            },\n            point: {\n                radius: 4,\n                hoverRadius: 6\n            }\n        }\n    }\n};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2278,7 +2273,7 @@
         "finalize": "",
         "libs": [],
         "x": 1730,
-        "y": 1900,
+        "y": 1920,
         "wires": [
             [
                 "dc53e55e60e5e4c6",
@@ -2348,8 +2343,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1660,
-        "y": 2140,
+        "x": 1440,
+        "y": 1960,
         "wires": []
     },
     {
@@ -2619,31 +2614,6 @@
         "wires": []
     },
     {
-        "id": "672de4c1b4e91c2d",
-        "type": "telegram command",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "command": "/data",
-        "description": "",
-        "registercommand": false,
-        "language": "",
-        "scope": "default",
-        "bot": "4db0bf18e8f75ad8",
-        "strict": false,
-        "hasresponse": true,
-        "useregex": false,
-        "removeregexcommand": false,
-        "outputs": 2,
-        "x": 650,
-        "y": 2240,
-        "wires": [
-            [
-                "63c7e92e0bb68be6"
-            ],
-            []
-        ]
-    },
-    {
         "id": "63c7e92e0bb68be6",
         "type": "function",
         "z": "2219b06636009d6c",
@@ -2660,36 +2630,6 @@
         "wires": [
             [
                 "2a3b17b35bebfe58"
-            ]
-        ]
-    },
-    {
-        "id": "2a3b17b35bebfe58",
-        "type": "telegram sender",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 1150,
-        "y": 2240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "25ce9bad5ee0f222",
-        "type": "telegram event",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "event": "callback_query",
-        "autoanswer": false,
-        "x": 680,
-        "y": 2340,
-        "wires": [
-            [
-                "01856e9e1d31c21e"
             ]
         ]
     },
@@ -2714,45 +2654,6 @@
         ]
     },
     {
-        "id": "152bd529675591c9",
-        "type": "telegram sender",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 1210,
-        "y": 2340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8843f2fe1bd85a5e",
-        "type": "telegram command",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "command": "/setThreshold",
-        "description": "",
-        "registercommand": false,
-        "language": "",
-        "scope": "default",
-        "bot": "4db0bf18e8f75ad8",
-        "strict": false,
-        "hasresponse": true,
-        "useregex": false,
-        "removeregexcommand": false,
-        "outputs": 2,
-        "x": 110,
-        "y": 600,
-        "wires": [
-            [
-                "ea3ec7b066627208"
-            ],
-            []
-        ]
-    },
-    {
         "id": "ea3ec7b066627208",
         "type": "function",
         "z": "2219b06636009d6c",
@@ -2769,36 +2670,6 @@
         "wires": [
             [
                 "f30f72b68be28d6e"
-            ]
-        ]
-    },
-    {
-        "id": "f30f72b68be28d6e",
-        "type": "telegram sender",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 590,
-        "y": 600,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "33a194e8a55f0672",
-        "type": "telegram event",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "event": "callback_query",
-        "autoanswer": false,
-        "x": 100,
-        "y": 680,
-        "wires": [
-            [
-                "5622a5afdba90b71"
             ]
         ]
     },
@@ -2820,37 +2691,6 @@
             [
                 "9e35e4ccfc3a4f8d"
             ]
-        ]
-    },
-    {
-        "id": "9e35e4ccfc3a4f8d",
-        "type": "telegram sender",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 630,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "81f97db9ffd2b904",
-        "type": "telegram receiver",
-        "z": "2219b06636009d6c",
-        "name": "",
-        "bot": "4db0bf18e8f75ad8",
-        "saveDataDir": "",
-        "filterCommands": false,
-        "x": 90,
-        "y": 860,
-        "wires": [
-            [
-                "4486d6402db06ebb"
-            ],
-            []
         ]
     },
     {
@@ -2883,6 +2723,161 @@
             [
                 "2510ab59b1cc961e"
             ]
+        ]
+    },
+    {
+        "id": "81f97db9ffd2b904",
+        "type": "telegram receiver",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 90,
+        "y": 860,
+        "wires": [
+            [
+                "4486d6402db06ebb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "672de4c1b4e91c2d",
+        "type": "telegram command",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "command": "/data",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "4db0bf18e8f75ad8",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 2240,
+        "wires": [
+            [
+                "63c7e92e0bb68be6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8843f2fe1bd85a5e",
+        "type": "telegram command",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "command": "/setThreshold",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "4db0bf18e8f75ad8",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "ea3ec7b066627208"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "25ce9bad5ee0f222",
+        "type": "telegram event",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "event": "callback_query",
+        "autoanswer": false,
+        "x": 680,
+        "y": 2340,
+        "wires": [
+            [
+                "01856e9e1d31c21e"
+            ]
+        ]
+    },
+    {
+        "id": "33a194e8a55f0672",
+        "type": "telegram event",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "event": "callback_query",
+        "autoanswer": false,
+        "x": 100,
+        "y": 680,
+        "wires": [
+            [
+                "5622a5afdba90b71"
+            ]
+        ]
+    },
+    {
+        "id": "2a3b17b35bebfe58",
+        "type": "telegram sender",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1150,
+        "y": 2240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "152bd529675591c9",
+        "type": "telegram sender",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1210,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f30f72b68be28d6e",
+        "type": "telegram sender",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e35e4ccfc3a4f8d",
+        "type": "telegram sender",
+        "z": "2219b06636009d6c",
+        "name": "",
+        "bot": "4db0bf18e8f75ad8",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 680,
+        "wires": [
+            []
         ]
     },
     {
@@ -3127,7 +3122,7 @@
         "tab": "home_tab",
         "order": 1,
         "disp": true,
-        "width": 6,
+        "width": 7,
         "collapse": false,
         "className": ""
     },
@@ -3138,7 +3133,7 @@
         "tab": "home_tab",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": 7,
         "collapse": false,
         "className": ""
     },
@@ -3149,7 +3144,7 @@
         "tab": "home_tab",
         "order": 4,
         "disp": true,
-        "width": 26,
+        "width": 28,
         "collapse": false,
         "className": ""
     },
@@ -3284,7 +3279,7 @@
         "id": "f0f84895977cfd6f",
         "type": "ui_group",
         "name": "Mã xác nhận",
-        "tab": "f27a938aeef1ded7",
+        "tab": "317c5a2e2a252213",
         "order": 1,
         "disp": true,
         "width": 6,
@@ -3334,7 +3329,7 @@
         "type": "ui_tab",
         "name": "Đăng nhập",
         "icon": "lock",
-        "order": 1,
+        "order": 9,
         "disabled": false,
         "hidden": false
     },
@@ -3352,7 +3347,7 @@
         "type": "ui_tab",
         "name": "Quên mật khẩu",
         "icon": "dashboard",
-        "order": 3,
+        "order": 6,
         "disabled": false,
         "hidden": true
     },
@@ -3369,7 +3364,7 @@
         "type": "ui_tab",
         "name": "Mật khẩu mới",
         "icon": "dashboard",
-        "order": 5,
+        "order": 4,
         "disabled": false,
         "hidden": true
     },
@@ -3378,15 +3373,16 @@
         "type": "ui_tab",
         "name": "Đăng ký",
         "icon": "dashboard",
-        "order": 6,
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
     {
-        "id": "f27a938aeef1ded7",
+        "id": "317c5a2e2a252213",
         "type": "ui_tab",
-        "name": "Xác nhận - Quên mật khẩu",
+        "name": "Xác nhận",
         "icon": "dashboard",
+        "order": 5,
         "disabled": false,
         "hidden": true
     },
