@@ -8,543 +8,6 @@
         "env": []
     },
     {
-        "id": "3594ab62c2d949a4",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "6329282c6db5b44c",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "e5faea48f0679e3a",
-        "type": "ui_tab",
-        "name": "23127157 - Nguyễn Hoàng Gia Bảo",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "24ce3922e07b70fc",
-        "type": "ui_group",
-        "name": "Stactics",
-        "tab": "e5faea48f0679e3a",
-        "order": 2,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "3c3d8f007808b303",
-        "type": "ui_group",
-        "name": "Main",
-        "tab": "e5faea48f0679e3a",
-        "order": 1,
-        "disp": true,
-        "width": "21",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "e31421cc3e4b27f6",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "broker.mqtt-dashboard.com",
-        "port": 1883,
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "1183ee75764de5bf",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "broker.mqtt-dashboard.com",
-        "port": 1883,
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "login_tab",
-        "type": "ui_tab",
-        "name": "Đăng nhập",
-        "icon": "lock",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "home_tab",
-        "type": "ui_tab",
-        "name": "Trang chủ",
-        "icon": "home",
-        "order": 2,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "03624fd6e0192ed3",
-        "type": "ui_tab",
-        "name": "Quên mật khẩu",
-        "icon": "dashboard",
-        "order": 3,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "317c5a2e2a252213",
-        "type": "ui_tab",
-        "name": "Xác nhận",
-        "icon": "dashboard",
-        "order": 4,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "5fbc7711003e14a0",
-        "type": "ui_tab",
-        "name": "Mật khẩu mới",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "4a22a1a7d67fc9cc",
-        "type": "ui_tab",
-        "name": "Đăng ký",
-        "icon": "dashboard",
-        "order": 6,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "login_group",
-        "type": "ui_group",
-        "name": "Chào mừng !!!",
-        "tab": "login_tab",
-        "order": 1,
-        "disp": true,
-        "width": 10,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "bc2745e9261eecb8",
-        "type": "ui_group",
-        "name": "Chất lượng không khí",
-        "tab": "home_tab",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "2479d9c11390cb6d",
-        "type": "ui_group",
-        "name": "Môi trường hiện tại",
-        "tab": "home_tab",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "c902f90e6aca1a97",
-        "type": "ui_group",
-        "name": "Biểu đồ",
-        "tab": "home_tab",
-        "order": 3,
-        "disp": true,
-        "width": 14,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "8841171fe2e5f73f",
-        "type": "ui_group",
-        "name": "Tùy chỉnh ngưỡng",
-        "tab": "home_tab",
-        "order": 4,
-        "disp": true,
-        "width": 26,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "72aa82b9e770af92",
-        "type": "ui_group",
-        "name": "Thông tin",
-        "tab": "03624fd6e0192ed3",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "f0f84895977cfd6f",
-        "type": "ui_group",
-        "name": "Mã xác nhận",
-        "tab": "317c5a2e2a252213",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "c57aef7b9edd92a0",
-        "type": "ui_group",
-        "name": "Thông tin",
-        "tab": "5fbc7711003e14a0",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "6f469d59f7c4209a",
-        "type": "ui_group",
-        "name": "Thông tin",
-        "tab": "4a22a1a7d67fc9cc",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "dbef2de882ccf871",
-        "type": "MySQLdatabase",
-        "name": "",
-        "host": "127.0.0.1",
-        "port": "3306",
-        "db": "projectIOT",
-        "tz": "",
-        "charset": "UTF8"
-    },
-    {
-        "id": "86530398a1886491",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "487b8d56a3640744",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "136f618f76053897",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "6215d6b0060294d0",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ef475be026a3fb2e",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "161b4d6aab11c922",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "3cd4271c1b6bd7c1",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "cb0f1b1dd174e73c",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "8c18926b5bf29ca2",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "dec5eacce178f394",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "944472dfd2abebb3",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "d6d125fa0a584ec2",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "8dec1bc222a47723",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2015c44845a413e5",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 6,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "3cf62078bb87de9a",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 8,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "968a018046b86a3e",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 9,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "97a311fd744fb82a",
-        "type": "ui_spacer",
-        "z": "f92df69886aea466",
-        "name": "spacer",
-        "group": "login_group",
-        "order": 11,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "9c4e49f77d2cb1fe",
-        "type": "global-config",
-        "name": "global-config",
-        "env": []
-    },
-    {
         "id": "4daaf1f3fa8dd350",
         "type": "ui_button",
         "z": "f92df69886aea466",
@@ -2462,7 +1925,7 @@
         "method": "push",
         "value": "msg.payload",
         "priority": "msg.priority",
-        "x": 1360,
+        "x": 1540,
         "y": 1200,
         "wires": [
             []
@@ -2597,5 +2060,464 @@
                 "cfa6205c2d0885e6"
             ]
         ]
+    },
+    {
+        "id": "2f37b63428d5072c",
+        "type": "firebase.on",
+        "z": "f92df69886aea466",
+        "name": "",
+        "firebaseconfig": "",
+        "childpath": "Statistics",
+        "atStart": true,
+        "eventType": "child_added",
+        "queries": [
+            {
+                "name": "limitToLast",
+                "value": "1"
+            }
+        ],
+        "x": 400,
+        "y": 1760,
+        "wires": [
+            [
+                "584c1b175b47c02e"
+            ]
+        ]
+    },
+    {
+        "id": "584c1b175b47c02e",
+        "type": "function",
+        "z": "f92df69886aea466",
+        "name": "Lấy dữ liệu",
+        "func": "/* // Lấy dữ liệu từ msg.payload\nlet data = msg.payload;\n\n// Nếu dữ liệu không hợp lệ\nif (!data || !data.gas || !data.humidity || !data.pm || !data.temperature) {\n    node.warn(\"Dữ liệu không hợp lệ\");\n    return null;\n}\n\n// Chuyển timestamp sang dạng dễ đọc\nlet time = new Date(data.timestamp);\ndata.timeStr = time.toLocaleString(\"vi-VN\", { timeZone: \"Asia/Ho_Chi_Minh\" });\n\nmsg.payload = data;\nreturn msg; */\n\n// Lấy timestamp từ dữ liệu Firebase\nlet dataTime = new Date(msg.payload.timestamp);\nconst firebaseDate = dataTime.toISOString().slice(0, 10);\n\n// Lấy dữ liệu lưu trong flow\nlet storedDate = flow.get('date') || null;\nlet count = flow.get('count') || 0;\nlet avgTemperature = flow.get('avgTemperature') || 0;\nlet avgHumidity = flow.get('avgHumidity') || 0;\nlet avgGas = flow.get('avgGas') || 0;\nlet avgPM = flow.get('avgPM') || 0;\n\n// Lấy thời gian đo trong ngày từ flow (nếu có)\nlet startTimeStr = flow.get('startTime') || null;\nlet endTimeStr = flow.get('endTime') || null;\nlet startTime = startTimeStr ? new Date(startTimeStr) : null;\nlet endTime = endTimeStr ? new Date(endTimeStr) : null;\n\n// Nếu ngày mới trong Firebase → reset và set thời gian bắt đầu đo\nif (storedDate !== firebaseDate) {\n    count = 0;\n    avgTemperature = 0;\n    avgHumidity = 0;\n    avgGas = 0;\n    avgPM = 0;\n    storedDate = firebaseDate;\n\n    startTime = dataTime; // thời gian đo đầu tiên của ngày\n    endTime = dataTime;   // lúc đầu cũng là thời gian kết thúc\n} else {\n    // Nếu chưa có startTime (trường hợp dữ liệu lỗi), gán luôn\n    if (!startTime) startTime = dataTime;\n    // Cập nhật thời gian kết thúc khi có dữ liệu mới trong cùng ngày\n    endTime = dataTime;\n}\n\n// Lấy dữ liệu mới từ Firebase\nconst { temperature, humidity, gas, pm } = msg.payload;\n\nif (\n    typeof temperature === 'number' &&\n    typeof humidity === 'number' &&\n    typeof gas === 'number' &&\n    typeof pm === 'number'\n) {\n    count += 1;\n\n    avgTemperature = (avgTemperature * (count - 1) + temperature) / count;\n    avgHumidity = (avgHumidity * (count - 1) + humidity) / count;\n    avgGas = (avgGas * (count - 1) + gas) / count;\n    avgPM = (avgPM * (count - 1) + pm) / count;\n\n    // Lưu vào flow (lưu string để tránh mất dữ liệu khi restart)\n    flow.set('date', storedDate);\n    flow.set('count', count);\n    flow.set('avgTemperature', avgTemperature);\n    flow.set('avgHumidity', avgHumidity);\n    flow.set('avgGas', avgGas);\n    flow.set('avgPM', avgPM);\n    flow.set('startTime', startTime.toISOString());\n    flow.set('endTime', endTime.toISOString());\n\n    // Format khoảng thời gian đo\n    const timeRange = `${startTime.toLocaleString('vi-VN')} → ${endTime.toLocaleString('vi-VN')}`;\n\n    // Xuất payload\n    msg.payload = {\n        temperature: avgTemperature.toFixed(2),\n        humidity: avgHumidity.toFixed(2),\n        gas: avgGas.toFixed(2),\n        pm: avgPM.toFixed(2),\n        firebaseDate: firebaseDate,\n        timeRange: timeRange\n    };\n} else {\n    msg.payload = { error: \"Dữ liệu đầu vào không hợp lệ\" };\n}\n\nreturn msg;\n\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1760,
+        "wires": [
+            [
+                "c8c29c916c10769b"
+            ]
+        ]
+    },
+    {
+        "id": "c8c29c916c10769b",
+        "type": "ui_template",
+        "z": "f92df69886aea466",
+        "group": "c902f90e6aca1a97",
+        "name": "Hiển thị text",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align: center;\">\n    📊 <b>Báo cáo chất lượng không khí:</b><br>\n    🌡 Nhiệt độ trung bình: {{msg.payload.temperature}} °C<br>\n    💧 Độ ẩm trung bình: {{msg.payload.humidity}} %<br>\n    🌫 Bụi mịn trung bình: {{msg.payload.pm}} µg/m³<br>\n    🛢 Khí Gas trung bình: {{msg.payload.gas}} ppm<br>\n    🕒 Thời gian đo: {{msg.payload.timeRange}}\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1050,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86530398a1886491",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "487b8d56a3640744",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "136f618f76053897",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6215d6b0060294d0",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ef475be026a3fb2e",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "161b4d6aab11c922",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3cd4271c1b6bd7c1",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cb0f1b1dd174e73c",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8c18926b5bf29ca2",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "dec5eacce178f394",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "944472dfd2abebb3",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d6d125fa0a584ec2",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8dec1bc222a47723",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2015c44845a413e5",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "3cf62078bb87de9a",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "968a018046b86a3e",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 9,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "97a311fd744fb82a",
+        "type": "ui_spacer",
+        "z": "f92df69886aea466",
+        "name": "spacer",
+        "group": "login_group",
+        "order": 11,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "login_group",
+        "type": "ui_group",
+        "name": "Chào mừng !!!",
+        "tab": "login_tab",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2479d9c11390cb6d",
+        "type": "ui_group",
+        "name": "Môi trường hiện tại",
+        "tab": "home_tab",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bc2745e9261eecb8",
+        "type": "ui_group",
+        "name": "Chất lượng không khí",
+        "tab": "home_tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c902f90e6aca1a97",
+        "type": "ui_group",
+        "name": "Biểu đồ",
+        "tab": "home_tab",
+        "order": 3,
+        "disp": true,
+        "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8841171fe2e5f73f",
+        "type": "ui_group",
+        "name": "Tùy chỉnh ngưỡng",
+        "tab": "home_tab",
+        "order": 4,
+        "disp": true,
+        "width": 26,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "72aa82b9e770af92",
+        "type": "ui_group",
+        "name": "Thông tin",
+        "tab": "03624fd6e0192ed3",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f0f84895977cfd6f",
+        "type": "ui_group",
+        "name": "Mã xác nhận",
+        "tab": "317c5a2e2a252213",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c57aef7b9edd92a0",
+        "type": "ui_group",
+        "name": "Thông tin",
+        "tab": "5fbc7711003e14a0",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f469d59f7c4209a",
+        "type": "ui_group",
+        "name": "Thông tin",
+        "tab": "4a22a1a7d67fc9cc",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e31421cc3e4b27f6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1183ee75764de5bf",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dbef2de882ccf871",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "projectIOT",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "login_tab",
+        "type": "ui_tab",
+        "name": "Đăng nhập",
+        "icon": "lock",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "home_tab",
+        "type": "ui_tab",
+        "name": "Trang chủ",
+        "icon": "home",
+        "order": 2,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "03624fd6e0192ed3",
+        "type": "ui_tab",
+        "name": "Quên mật khẩu",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "317c5a2e2a252213",
+        "type": "ui_tab",
+        "name": "Xác nhận",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "5fbc7711003e14a0",
+        "type": "ui_tab",
+        "name": "Mật khẩu mới",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "4a22a1a7d67fc9cc",
+        "type": "ui_tab",
+        "name": "Đăng ký",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
     }
 ]
