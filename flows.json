@@ -2289,7 +2289,8 @@
             [
                 "653a2dcb66171ee7",
                 "f013d8be62eda6de",
-                "3b4ff3a0aa3e1a1b"
+                "3b4ff3a0aa3e1a1b",
+                "90dcd4613dba828e"
             ]
         ]
     },
@@ -2321,13 +2322,13 @@
             }
         ],
         "repeat": "",
-        "crontab": "",
+        "crontab": "00 23 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 460,
+        "x": 470,
         "y": 1600,
         "wires": [
             [
@@ -3678,8 +3679,8 @@
         "group": "4ffc6ab462b6373d",
         "name": "",
         "order": 0,
-        "width": 0,
-        "height": 0,
+        "width": "26",
+        "height": "8",
         "columns": [
             {
                 "field": "alert",
