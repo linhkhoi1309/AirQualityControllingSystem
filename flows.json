@@ -1106,7 +1106,7 @@
         "width": 0,
         "height": 0,
         "passthru": false,
-        "decouple": "true",
+        "decouple": "false",
         "topic": "topic",
         "topicType": "msg",
         "style": "",
@@ -1120,7 +1120,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 400,
+        "x": 140,
         "y": 1000,
         "wires": [
             [
@@ -1651,14 +1651,14 @@
         "name": "",
         "topic": "/wokwi/buzzer",
         "qos": "2",
-        "retain": "false",
+        "retain": "true",
         "respTopic": "",
         "contentType": "",
         "userProps": "",
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 600,
+        "x": 400,
         "y": 980,
         "wires": []
     },
@@ -2214,27 +2214,6 @@
         "wires": []
     },
     {
-        "id": "b24bc7a393ad7244",
-        "type": "mqtt in",
-        "z": "4789bd7cce04ab75",
-        "name": "",
-        "topic": "/wokwi/buzzer/alert",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "e31421cc3e4b27f6",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 170,
-        "y": 1000,
-        "wires": [
-            [
-                "46f80542025704f6"
-            ]
-        ]
-    },
-    {
         "id": "6e7e6eaabe3b17f9",
         "type": "debug",
         "z": "4789bd7cce04ab75",
@@ -2247,8 +2226,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 1040,
+        "x": 380,
+        "y": 1020,
         "wires": []
     },
     {
@@ -2276,7 +2255,7 @@
         "type": "function",
         "z": "4789bd7cce04ab75",
         "name": "Kiểm tra ngưỡng",
-        "func": "// Lấy email từ các trường hợp khác nhau\nlet email = flow.get(\"email_login\") || flow.get(\"email\") || flow.get(\"email_rs_pass\");\n\n// Nếu không có email thì dừng\nif (!email) {\n    node.warn(\"Không tìm thấy email người nhận\");\n    return null;\n}\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastAlert = flow.get(`lastAlert_${sensor.key}`) || null;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (lastAlert === null || lastAlert !== value) {\n                flow.set(`lastAlert_${sensor.key}`, value);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`lastAlert_${sensor.key}`, null); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG (VUI LÒNG BẬT MÁY LỌC KHÔNG KHÍ)\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
+        "func": "// Lấy email từ các trường hợp khác nhau\nlet email = flow.get(\"email_login\") || flow.get(\"email\") || flow.get(\"email_rs_pass\");\n\n// Nếu không có email thì dừng\nif (!email) {\n    node.warn(\"Không tìm thấy email người nhận\");\n    return null;\n}\n\n// Danh sách các loại cảm biến cần kiểm tra\nlet sensors = [\n    { key: \"temperature\", thresholdKey: \"pending_Temperature\", name: \"Nhiệt độ\", unit: \"°C\" },\n    { key: \"humidity\", thresholdKey: \"pending_Humidity\", name: \"Độ ẩm\", unit: \"%\" },\n    { key: \"gas\", thresholdKey: \"pending_Gas\", name: \"Khí gas\", unit: \"ppm\" },\n    { key: \"pm\", thresholdKey: \"pending_PM\", name: \"Bụi mịn\", unit: \"µg/m³\" }\n];\n\n// Mảng chứa các cảnh báo cần gửi\nlet alerts = [];\n\nsensors.forEach(sensor => {\n    let value = flow.get(sensor.key);\n    let threshold = flow.get(sensor.thresholdKey);\n    let lastState = flow.get(`alertState_${sensor.key}`) || false;\n\n    if (value !== undefined && threshold !== undefined) {\n        if (value > threshold) {\n            if (!lastState) {\n                flow.set(`alertState_${sensor.key}`, true);\n                alerts.push(`${sensor.name} hiện tại là ${value}${sensor.unit} đã vượt ngưỡng ${threshold}${sensor.unit}`);\n            }\n        } else {\n            flow.set(`alertState_${sensor.key}`, false); // Reset khi an toàn\n        }\n    }\n});\n\n// Nếu có cảnh báo thì gửi email\nif (alerts.length > 0) {\n    msg.to = email;\n    msg.topic = \"CẢNH BÁO HỆ THỐNG (VUI LÒNG BẬT MÁY LỌC KHÔNG KHÍ)\";\n    msg.payload = alerts.join(\"\\n\"); // Ghép các cảnh báo thành nhiều dòng\n    return msg;\n}\n\nreturn null; // Không có gì để gửi\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
