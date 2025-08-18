@@ -1090,7 +1090,8 @@
         "y": 1020,
         "wires": [
             [
-                "80f3d7810e70b6ed"
+                "80f3d7810e70b6ed",
+                "901303eb2a4838f7"
             ]
         ]
     },
@@ -1106,7 +1107,7 @@
         "width": 0,
         "height": 0,
         "passthru": false,
-        "decouple": "false",
+        "decouple": "true",
         "topic": "topic",
         "topicType": "msg",
         "style": "",
@@ -1120,12 +1121,12 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 140,
-        "y": 1000,
+        "x": 940,
+        "y": 1080,
         "wires": [
             [
                 "7803d3990028c1dc",
-                "6e7e6eaabe3b17f9"
+                "eb0b9aaa50323802"
             ]
         ]
     },
@@ -1640,8 +1641,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 1270,
-        "y": 1020,
+        "x": 1150,
+        "y": 1000,
         "wires": []
     },
     {
@@ -1658,8 +1659,8 @@
         "correl": "",
         "expiry": "",
         "broker": "e31421cc3e4b27f6",
-        "x": 400,
-        "y": 980,
+        "x": 1160,
+        "y": 1140,
         "wires": []
     },
     {
@@ -2016,7 +2017,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
+        "x": 990,
         "y": 1200,
         "wires": [
             [
@@ -2214,23 +2215,6 @@
         "wires": []
     },
     {
-        "id": "6e7e6eaabe3b17f9",
-        "type": "debug",
-        "z": "4789bd7cce04ab75",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 1020,
-        "wires": []
-    },
-    {
         "id": "711d2cd73b763095",
         "type": "function",
         "z": "4789bd7cce04ab75",
@@ -2387,7 +2371,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 880,
-        "y": 1680,
+        "y": 1660,
         "wires": []
     },
     {
@@ -2434,7 +2418,7 @@
         "method": "push",
         "value": "msg.payload",
         "priority": "msg.priority",
-        "x": 1540,
+        "x": 1520,
         "y": 1200,
         "wires": [
             []
@@ -3562,7 +3546,7 @@
         "method": "POST",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "https://www.pushsafer.com/api?k=5ijW23zKAYIs0CeoOFNf&m={{payload}}&t={{topic}}",
+        "url": "https://www.pushsafer.com/api?k=awGAEsDp9vZesHrGtHef&m={{payload}}&t={{topic}}",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -3622,12 +3606,11 @@
         "atStart": true,
         "eventType": "value",
         "queries": [],
-        "x": 1250,
+        "x": 1610,
         "y": 1100,
         "wires": [
             [
-                "fc66b361faaa8a77",
-                "90fe47e8f45cfdb3"
+                "fc66b361faaa8a77"
             ]
         ]
     },
@@ -3643,7 +3626,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1710,
+        "x": 2050,
         "y": 1100,
         "wires": [
             [
@@ -3684,7 +3667,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1990,
+        "x": 2290,
         "y": 1100,
         "wires": []
     },
@@ -3716,8 +3699,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 400,
+        "x": 830,
+        "y": 380,
         "wires": [
             [
                 "343acb69be4e0f71"
@@ -3734,8 +3717,8 @@
         "repeatifnull": false,
         "eventType": "value",
         "queries": [],
-        "x": 1050,
-        "y": 460,
+        "x": 1030,
+        "y": 440,
         "wires": [
             [
                 "604724564c03726e",
@@ -3755,8 +3738,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1500,
-        "y": 480,
+        "x": 1440,
+        "y": 440,
         "wires": []
     },
     {
@@ -3803,19 +3786,100 @@
         ]
     },
     {
-        "id": "90fe47e8f45cfdb3",
-        "type": "debug",
+        "id": "eb0b9aaa50323802",
+        "type": "function",
         "z": "4789bd7cce04ab75",
-        "name": "debug 10",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1660,
-        "y": 1020,
-        "wires": []
+        "name": "Lưu trên threshold",
+        "func": "msg.payload = {buzzer: msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 1100,
+        "wires": [
+            [
+                "d0dc5985913943d1"
+            ]
+        ]
+    },
+    {
+        "id": "901303eb2a4838f7",
+        "type": "function",
+        "z": "4789bd7cce04ab75",
+        "name": "Lưu trên threshold",
+        "func": "msg.payload = {relay: msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 1060,
+        "wires": [
+            [
+                "d0dc5985913943d1"
+            ]
+        ]
+    },
+    {
+        "id": "d0dc5985913943d1",
+        "type": "firebase modify",
+        "z": "4789bd7cce04ab75",
+        "name": "",
+        "firebaseconfig": "23b924b292f89500",
+        "childpath": "Threshold",
+        "method": "update",
+        "value": "msg.payload",
+        "priority": "msg.priority",
+        "x": 1610,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0636f4a59cc5bb6a",
+        "type": "firebase.on",
+        "z": "4789bd7cce04ab75",
+        "name": "",
+        "firebaseconfig": "23b924b292f89500",
+        "childpath": "Threshold",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 300,
+        "y": 1000,
+        "wires": [
+            [
+                "7df0da5bbd35f507"
+            ]
+        ]
+    },
+    {
+        "id": "7df0da5bbd35f507",
+        "type": "function",
+        "z": "4789bd7cce04ab75",
+        "name": "Gửi về threshold buzzer",
+        "func": "return [{payload: msg.payload.buzzer}, {payload: msg.payload.relay}];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1080,
+        "wires": [
+            [
+                "46f80542025704f6"
+            ],
+            [
+                "47894f935683637e"
+            ]
+        ]
     }
 ]
